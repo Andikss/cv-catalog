@@ -6,7 +6,6 @@ export const Stats = () => {
     <Grid
       templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
       px={{ base: 2, md: '90px' }}
-      mb="130px"
       gap={10}
       mt={4}
     >
