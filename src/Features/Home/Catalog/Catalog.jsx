@@ -58,29 +58,40 @@ export const Catalog = () => {
                   key={item.id}
                   position="relative"
                   width="100%"
-                  className="image-item"
                   background="gray.200"
-                  height="400px"
+                  height="auto"
                   borderRadius="md"
                   overflow="hidden"
                   display="flex"
                   alignItems="center"
                   justifyContent="center"
+                  shadow="md"
+                  transition="transform 0.3s ease, box-shadow 0.3s ease"
+                  _hover={{
+                    transform: 'scale(1.1)',
+                    boxShadow: 'lg'
+                  }}
                 >
-                  <Image
-                    src={`https://ads.andikads.my.id${item.url}`}
-                    alt={`Image ${item.id}`}
-                    height="400px"
-                    objectFit="cover"
-                    borderRadius="md"
-                    style={{ opacity: 0 }}
-                    onLoad={() => {
-                      gsap.to(`.image-item[data-id="${item.id}"] img`, {
-                        opacity: 1,
-                        duration: 1,
-                      });
-                    }}
-                  />
+                  <Box
+                    width="100%"
+                    height="100%"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    transition="transform 0.3s ease"
+                  >
+                    <Image
+                      src={`https://ads.andikads.my.id${item.url}`}
+                      alt={`Image ${item.id}`}
+                      maxH="400px"
+                      objectFit="contain"
+                      borderRadius="md"
+                      onLoad={(e) => {
+                        e.target.style.opacity = 1;
+                      }}
+                      style={{ opacity: 0 }}
+                    />
+                  </Box>
                 </Box>
               ))}
             </Grid>
