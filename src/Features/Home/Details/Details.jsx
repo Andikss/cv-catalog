@@ -10,7 +10,7 @@ export const Details = () => {
       justifyContent="center"
       width="100%"
       maxW="container.xl"
-      minH="500px" 
+      minH="400px" 
       gap={6}
       p={{ base: 4, md: 6 }}
     >

@@ -1,10 +1,10 @@
 import { Box, Card, CardBody, Image, Stack } from '@chakra-ui/react';
 import { Topbar } from '../Components';
-import { Stats, Details, Catalog } from '../Features/Home';
+import { Stats, Catalog, Details } from '../Features/Home';
 
 const Home = () => {
   return (
-    <Box>
+    <Box position="relative">
       <Topbar />
 
       <Box width="100%" height="auto">
@@ -13,7 +13,7 @@ const Home = () => {
         {/* Stats Section */}
         <Box p={{ base: 2, sm: 2, md: 6, xl: 6 }}>
           <Card
-            pb="500px"
+            pb="1000px"
             shadow="xl"
             border="none"
             height="auto"
@@ -21,7 +21,7 @@ const Home = () => {
             bg="linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0px, rgba(255, 255, 255) 90px)"
           >
             <CardBody>
-              <Stack justifyContent="center" alignItems="center" gap="150px">
+              <Stack justifyContent="center" alignItems="center" gap="150px" width="100%">
                 <Stats/>
                 <Details/>
 

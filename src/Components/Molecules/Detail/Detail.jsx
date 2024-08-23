@@ -14,7 +14,7 @@ export const Detail = ({ title, description, icon: Icon }) => {
       <Text fontWeight="bold" mt={4} mb={2}>
         {title}
       </Text>
-      <Text opacity={0.7}>
+      <Text opacity={0.7} fontSize="sm">
         {description}
       </Text>
     </Box>
