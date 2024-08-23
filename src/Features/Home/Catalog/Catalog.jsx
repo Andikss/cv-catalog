@@ -1,10 +1,12 @@
-import { Box, Grid, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Grid, Image, Stack, Text, useDisclosure } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { CatalogTitle } from "../../../Components";
+import { CatalogTitle, ImageViewer } from "../../../Components";
 import { gsap } from "gsap";
 
 export const Catalog = () => {
   const [data, setData] = useState(null);
+  const [selectedImages, setSelectedImages] = useState([]);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,6 +29,11 @@ export const Catalog = () => {
       { opacity: 1, scale: 1, duration: 1, stagger: 0.2 }
     );
   }, [data]);
+
+  const handleImageClick = (images) => {
+    setSelectedImages(images);
+    onOpen();
+  };
 
   if (!data) {
     return <Text>Loading...</Text>;
@@ -71,6 +78,7 @@ export const Catalog = () => {
                     transform: 'scale(1.1)',
                     boxShadow: 'lg'
                   }}
+                  onClick={() => handleImageClick(Object.values(data[category]).flat())}
                 >
                   <Box
                     width="100%"
@@ -98,6 +106,8 @@ export const Catalog = () => {
           </Box>
         ))}
       </Stack>
+
+      <ImageViewer images={selectedImages} isOpen={isOpen} onClose={onClose} />
     </Box>
   );
 };
