@@ -55,6 +55,9 @@ export const Details = () => {
             zIndex="1" 
             filter="brightness(70%)"
           />
+          <Box zIndex={1} mb={3}>
+            <MdFilePresent fontSize="xxx-large"/>
+          </Box>
           <Text fontSize="xx-large" fontWeight="700" textAlign="center" zIndex="1">
             Dapatkan CV Terbaik
           </Text>
