@@ -4,10 +4,13 @@ import { Stat } from '@/Components'
 export const Stats = () => {
   return (
     <Grid
+      borderBottom="1px solid"
+      borderColor="gray.200"
       templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
       px={{ base: 2, md: '90px' }}
       gap={10}
       mt={4}
+      pb={5}
     >
       <Stat
         total={80}

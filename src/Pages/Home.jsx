@@ -20,7 +20,7 @@ const Home = () => {
             bg="linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0px, rgba(255, 255, 255) 90px)"
           >
             <CardBody>
-              <Stack justifyContent="center" alignItems="center" gap="150px" width="100%">
+              <Stack justifyContent="center" alignItems="center" gap="100px" width="100%">
                 <Stats/>
                 <Details/>
                 <Catalog/>

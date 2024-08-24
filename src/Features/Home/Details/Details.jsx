@@ -1,5 +1,5 @@
-import { Card, CardBody, Flex, Grid } from "@chakra-ui/react";
-import { FaClockRotateLeft } from "react-icons/fa6";
+import { Box, Button, Card, CardBody, Flex, Grid, Link, Text } from "@chakra-ui/react";
+import { FaClockRotateLeft, FaWhatsapp } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { Detail } from "@/Components";
 import { GiPortal } from "react-icons/gi";
@@ -24,12 +24,47 @@ export const Details = () => {
       transition={{ duration: 0.5, ease: "easeOut" }} 
     >
       <Card
-        background="gray.400"
         flex={1}
         minH="inherit"
+        background="gray.400"
+        position="relative"
+        borderRadius="15px"
+        overflow="hidden"
       >
-        <CardBody>
-          {/* Content for the Card goes here */}
+        <CardBody
+          display="flex" 
+          alignItems="center"
+          justifyContent="center"
+          flexDirection="column"
+          position="relative"
+          borderRadius="15px"
+          height="100%" 
+          px={3}
+          color="white"
+        >
+          <Box
+            position="absolute"
+            top="0"
+            left="0"
+            width="100%"
+            height="100%"
+            bgImage="url('assets/banner-2.jpg')"
+            bgSize="cover"
+            bgPosition="center"
+            bgRepeat="no-repeat"
+            zIndex="1" 
+            filter="brightness(70%)"
+          />
+          <Text fontSize="xx-large" fontWeight="700" textAlign="center" zIndex="1">
+            Dapatkan CV Terbaik
+          </Text>
+          <Text mb={7} fontSize="md" textAlign="center" zIndex="1">
+            Kami akan memberikanmu CV terbaik untuk mendapatkan pekerjaan impianmu
+          </Text>
+
+          <Button leftIcon={<FaWhatsapp />} zIndex="1" as={Link} href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}`}>
+            Hubungi Kami
+          </Button>
         </CardBody>
       </Card>
 
