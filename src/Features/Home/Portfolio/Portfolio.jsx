@@ -6,7 +6,7 @@ export const Portfolio = () => {
     <Box width="100%" height="auto" px={{ base: 2, md: '80px' }}>
       <CatalogTitle
         label="Tingkatkan Kesempatan"
-        title="Dengam CV Buatan Kami"
+        title="Dengan CV Buatan Kami"
         description="CV professional akan membuat kesempatan anda diterima untuk masuk di perusahaan lebih besar"
       />
 
