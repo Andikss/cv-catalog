@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { Flex, Heading, Link, Collapse, IconButton, Box, Image } from '@chakra-ui/react';
-import { BiBuilding } from 'react-icons/bi';
+import { Flex, Heading, Link, Collapse, Box, Image, Button } from '@chakra-ui/react';
+import { BiBuilding, BiStar } from 'react-icons/bi';
 import { BsGithub } from 'react-icons/bs';
 import { GrCatalog } from 'react-icons/gr';
-import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { MdFilePresent, MdMail, MdPayment } from 'react-icons/md';
+import { HiRectangleStack } from 'react-icons/hi2';
 
 export const Topbar = () => {
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isCatalogHovered, setIsCatalogHovered] = useState(false);
 
-  const handleToggle = () => setIsOpen(!isOpen);
 
   const handleSmoothScroll = (event, targetId) => {
     event.preventDefault();
@@ -46,34 +46,102 @@ export const Topbar = () => {
           <Image src='assets/favicon.png' height="40px"/>
           <Heading size="md">DESAIN CV TOP</Heading>
         </Box>
-        <IconButton
-          aria-label={isOpen ? 'Close Menu' : 'Open Menu'}
-          icon={isOpen ? <HiX /> : <HiMenuAlt3 />}
-          variant="outline"
-          onClick={handleToggle}
-          display={{ base: 'flex', md: 'none' }}
-          border="none"
-        />
-      </Flex>
-
-      <Collapse in={isOpen} style={{ width: '100%' }} display={{ base: 'flex', md: 'none' }}>
         <Flex
-          direction="column"
-          gap={3}
-          mt={4}
-          width="100%"
+        justifyContent="space-between"
+        alignItems="center"
+        display={{ base: 'none', md: 'flex' }}
+        width="100%"
+      >
+        <Box display="flex" flexDirection="row" alignItems="center" gap={2}>
+          <Image src='assets/favicon.png' height="40px"/>
+          <Heading size="md">DESAIN CV TOP</Heading>
+        </Box>
+        <Flex
+          direction="row"
           alignItems="center"
-          display={{ base: 'flex', md: 'none' }}
+          gap={3} 
         >
-          <Link
-            display="flex"
-            alignItems="center"
-            gap={1}
-            href="#catalog"
-            onClick={(e) => handleSmoothScroll(e, 'catalog')}
+          <Box
+            position="relative"
+            onMouseEnter={() => setIsCatalogHovered(true)}
+            onMouseLeave={() => setIsCatalogHovered(false)}
           >
-            <GrCatalog /> Katalog
-          </Link>
+            <Link
+              display="flex"
+              alignItems="center"
+              gap={1}
+              href="#catalog"
+              onClick={(e) => handleSmoothScroll(e, 'catalog')}
+            >
+              <GrCatalog /> Katalog
+            </Link>
+            <Collapse in={isCatalogHovered} animateOpacity>
+              <Box 
+                position="absolute" 
+                top="100%" 
+                left="0" 
+                mt={2} 
+                bg="white" 
+                boxShadow="md" 
+                borderRadius="md" 
+                zIndex="10" 
+                minW="200px" 
+                display="flex" 
+                flexDirection="column"
+              >
+                <Button 
+                  as={Link}
+                  href='#packet-mail'
+                  variant="ghost" 
+                  leftIcon={<MdMail />} 
+                  textAlign="start" 
+                  justifyContent="flex-start" 
+                >
+                  Surat Lamaran
+                </Button>
+                <Button 
+                  as={Link}
+                  href='#packet-cv'
+                  variant="ghost" 
+                  leftIcon={<MdFilePresent />} 
+                  textAlign="start" 
+                  justifyContent="flex-start" 
+                >
+                  CV ATS
+                </Button>
+                <Button 
+                  as={Link}
+                  href='#packet-regular'
+                  variant="ghost" 
+                  leftIcon={<HiRectangleStack />} 
+                  textAlign="start" 
+                  justifyContent="flex-start" 
+                >
+                  Paket Regular
+                </Button>
+                <Button 
+                  as={Link}
+                  href='#packet-premium'
+                  variant="ghost" 
+                  leftIcon={<BiStar />} 
+                  textAlign="start" 
+                  justifyContent="flex-start" 
+                >
+                  Paket Premium
+                </Button>
+                <Button 
+                  as={Link}
+                  href='#packet-platinum'
+                  variant="ghost" 
+                  leftIcon={<MdPayment />} 
+                  textAlign="start" 
+                  justifyContent="flex-start" 
+                >
+                  Paket Platinum
+                </Button>
+              </Box>
+            </Collapse>
+          </Box>
           <Link
             display="flex"
             alignItems="center"
@@ -94,52 +162,6 @@ export const Topbar = () => {
             Developer
           </Link>
         </Flex>
-      </Collapse>
-
-      {/* Desktop view */}
-      <Flex
-        justifyContent="space-between"
-        alignItems="center"
-        display={{ base: 'none', md: 'flex' }}
-        width="100%"
-      >
-      <Box display="flex" flexDirection="row" alignItems="center" gap={2}>
-        <Image src='assets/favicon.png' height="40px"/>
-        <Heading size="md">DESAIN CV TOP</Heading>
-      </Box>
-      <Flex
-        direction="row"
-        alignItems="center"
-        gap={3} 
-      >
-        <Link
-          display="flex"
-          alignItems="center"
-          gap={1}
-          href="#catalog"
-          onClick={(e) => handleSmoothScroll(e, 'catalog')}
-        >
-          <GrCatalog /> Katalog
-        </Link>
-        <Link
-          display="flex"
-          alignItems="center"
-          gap={1}
-          href="#companies"
-          onClick={(e) => handleSmoothScroll(e, 'companies')}
-        >
-          <BiBuilding /> Perusahaan
-        </Link>
-        <Link
-          display="flex"
-          alignItems="center"
-          gap={1}
-          href='https://andikss.github.io'
-          target='_blank'
-        >
-          <BsGithub />
-          Developer
-        </Link>
       </Flex>
       </Flex>
     </Flex>

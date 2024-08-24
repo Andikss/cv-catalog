@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 
 export const Catalog = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [selectedImages, setSelectedImages] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,7 +37,7 @@ export const Catalog = () => {
     onOpen();
   };
 
-  if (!data) {
+  if (data.length === 0) {
     return <Spinner colorScheme="teal" size="md" />;
   }
 
@@ -50,19 +50,19 @@ export const Catalog = () => {
       />
 
       <Stack height="auto" spacing={6} mt="80px" px={{ base: 2, md: '80px' }}>
-        {Object.keys(data).map((packet) => (
-          <Box key={packet} width="100%" display="flex" flexDirection={{ base: "column", md: "row" }} mb={5}>
+        {data.map((packet) => (
+          <Box key={packet.id} width="100%" display="flex" flexDirection={{ base: "column", md: "row" }} mb={5}>
             <Box width={{ base: '100%', md: '25%' }}>
               <Box position="sticky" top="100px">
                 <Box position="relative">
                   <Text fontWeight="900" fontSize="xx-large" color="#344767">
-                    {packet}
+                    {packet.name}
                   </Text>
                   <Box position="absolute" bottom={1} left={0} width="60px" borderTop="4px solid" borderColor="#344767"></Box>
                 </Box>
                 <Text mt={2} fontSize="md" color="gray.600" pr={3}>
-                  {data[packet].description}
-                  <span style={{ color: 'orange' }}> Dalam Format PNG / PDF</span>
+                  {packet.description}
+                  {packet.description && (<span style={{ color: 'orange' }}> Dalam Format PNG / PDF</span>)}
                 </Text>
               </Box>
             </Box>
@@ -75,51 +75,49 @@ export const Catalog = () => {
               alignItems="center"
               justifyContent="center"
             >
-              {Object.keys(data[packet].category).map((category) =>
-                data[packet].category[category].map((item, index) => (
+              {packet.cv.map((item, index) => (
+                <Box
+                  key={item.id}
+                  position="relative"
+                  width="100%"
+                  background="gray.200"
+                  height="auto"
+                  borderRadius="md"
+                  overflow="hidden"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  shadow="md"
+                  transition="transform 0.3s ease, box-shadow 0.3s ease"
+                  _hover={{
+                    transform: 'scale(1.1)',
+                    boxShadow: 'lg'
+                  }}
+                  onClick={() => handleImageClick(packet.cv, index)} 
+                >
                   <Box
-                    key={item.id}
-                    position="relative"
                     width="100%"
-                    background="gray.200"
-                    height="auto"
-                    borderRadius="md"
-                    overflow="hidden"
+                    height="100%"
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
-                    shadow="md"
-                    transition="transform 0.3s ease, box-shadow 0.3s ease"
-                    _hover={{
-                      transform: 'scale(1.1)',
-                      boxShadow: 'lg'
-                    }}
-                    onClick={() => handleImageClick(data[packet].category[category], index)} 
+                    transition="transform 0.3s ease"
                   >
-                    <Box
-                      width="100%"
-                      height="100%"
-                      display="flex"
-                      alignItems="center"
-                      justifyContent="center"
-                      transition="transform 0.3s ease"
-                    >
-                      <Image
-                        src={`https://ads.andikads.my.id${item.url}`}
-                        alt={`Image ${item.id}`}
-                        maxH="400px"
-                        flex={1}
-                        objectFit="contain"
-                        borderRadius="md"
-                        onLoad={(e) => {
-                          e.target.style.opacity = 1;
-                        }}
-                        style={{ opacity: 0 }}
-                      />
-                    </Box>
+                    <Image
+                      src={`https://ads.andikads.my.id${item.url}`}
+                      alt={`Image ${item.id}`}
+                      maxH="400px"
+                      flex={1}
+                      objectFit="contain"
+                      borderRadius="md"
+                      onLoad={(e) => {
+                        e.target.style.opacity = 1;
+                      }}
+                      style={{ opacity: 0 }}
+                    />
                   </Box>
-                ))
-              )}
+                </Box>
+              ))}
             </Grid>
           </Box>
         ))}
