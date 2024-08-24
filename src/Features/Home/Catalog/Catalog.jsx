@@ -14,9 +14,10 @@ export const Catalog = () => {
       try {
         const response = await fetch(import.meta.env.VITE_API_URL);
         const result = await response.json();
-        setData(result.data);
+        setData(result.data || []);
       } catch (error) {
         console.error("Error fetching data:", error);
+        setData([]); // Fallback to empty array
       }
     };
 
@@ -37,7 +38,7 @@ export const Catalog = () => {
     onOpen();
   };
 
-  if (data.length === 0) {
+  if (!data.length) {
     return <Spinner colorScheme="teal" size="md" />;
   }
 
@@ -56,7 +57,7 @@ export const Catalog = () => {
               <Box position="sticky" top="100px">
                 <Box position="relative">
                   <Text fontWeight="900" fontSize="xx-large" color="#344767">
-                    {packet.name}
+                    {packet.name || 'No Name'}
                   </Text>
                   <Box position="absolute" bottom={1} left={0} width="60px" borderTop="4px solid" borderColor="#344767"></Box>
                 </Box>
@@ -75,7 +76,7 @@ export const Catalog = () => {
               alignItems="center"
               justifyContent="center"
             >
-              {packet.cv.map((item, index) => (
+              {packet.cv?.map((item, index) => (
                 <Box
                   key={item.id}
                   position="relative"
@@ -93,7 +94,7 @@ export const Catalog = () => {
                     transform: 'scale(1.1)',
                     boxShadow: 'lg'
                   }}
-                  onClick={() => handleImageClick(packet.cv, index)} 
+                  onClick={() => handleImageClick(packet.cv, index)}
                 >
                   <Box
                     width="100%"
