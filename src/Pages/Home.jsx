@@ -5,7 +5,7 @@ import { Topbar, Footer } from '@/Components';
 const Home = () => {
   return (
     <Box position="relative">
-      <Topbar />
+      <Topbar /> 
 
       <Box width="100%" height="auto">
         <Image src="assets/banner.jpg" width="100%" height="440px" />

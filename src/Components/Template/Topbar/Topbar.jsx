@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Flex, Heading, Link, Collapse, IconButton } from '@chakra-ui/react';
+import { Flex, Heading, Link, Collapse, IconButton, Box, Image } from '@chakra-ui/react';
 import { BiBuilding } from 'react-icons/bi';
 import { BsGithub } from 'react-icons/bs';
 import { GrCatalog } from 'react-icons/gr';
@@ -42,7 +42,10 @@ export const Topbar = () => {
       alignItems="center"
     >
       <Flex width="100%" justifyContent="space-between" alignItems="center">
-        <Heading size="md" display={{ base: 'block', md: 'none' }}>Toploker</Heading>
+        <Box flexDirection="row" alignItems="center" gap={2} display={{ base: 'flex', md: 'none' }}>
+          <Image src='assets/favicon.png' height="40px"/>
+          <Heading size="md">DESAIN CV TOP</Heading>
+        </Box>
         <IconButton
           aria-label={isOpen ? 'Close Menu' : 'Open Menu'}
           icon={isOpen ? <HiX /> : <HiMenuAlt3 />}
@@ -100,7 +103,10 @@ export const Topbar = () => {
         display={{ base: 'none', md: 'flex' }}
         width="100%"
       >
-      <Heading size="md">Toploker</Heading>
+      <Box display="flex" flexDirection="row" alignItems="center" gap={2}>
+        <Image src='assets/favicon.png' height="40px"/>
+        <Heading size="md">DESAIN CV TOP</Heading>
+      </Box>
       <Flex
         direction="row"
         alignItems="center"

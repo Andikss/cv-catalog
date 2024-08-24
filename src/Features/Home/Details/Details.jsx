@@ -30,6 +30,7 @@ export const Details = () => {
         position="relative"
         borderRadius="15px"
         overflow="hidden"
+        shadow="xl"
       >
         <CardBody
           display="flex" 

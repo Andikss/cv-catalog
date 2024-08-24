@@ -7,7 +7,7 @@ export const Catalog = () => {
   const [data, setData] = useState(null);
   const [selectedImages, setSelectedImages] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,12 +33,12 @@ export const Catalog = () => {
 
   const handleImageClick = (images, index) => {
     setSelectedImages(images);
-    setCurrentIndex(index); 
+    setCurrentIndex(index);
     onOpen();
   };
-  
+
   if (!data) {
-    return <Spinner colorScheme="teal" size="md"/>;
+    return <Spinner colorScheme="teal" size="md" />;
   }
 
   return (
@@ -50,17 +50,20 @@ export const Catalog = () => {
       />
 
       <Stack height="auto" spacing={6} mt="80px" px={{ base: 2, md: '80px' }}>
-        {Object.keys(data).map((category) => (
-          <Box key={category} width="100%" display="flex" flexDirection={{ base: "column", md: "row" }} mb={5}>
+        {Object.keys(data).map((packet) => (
+          <Box key={packet} width="100%" display="flex" flexDirection={{ base: "column", md: "row" }} mb={5}>
             <Box width={{ base: '100%', md: '25%' }}>
               <Box position="sticky" top="100px">
                 <Box position="relative">
                   <Text fontWeight="900" fontSize="xx-large" color="#344767">
-                    {category}
+                    {packet}
                   </Text>
-  
                   <Box position="absolute" bottom={1} left={0} width="60px" borderTop="4px solid" borderColor="#344767"></Box>
                 </Box>
+                <Text mt={2} fontSize="md" color="gray.600" pr={3}>
+                  {data[packet].description}
+                  <span style={{ color: 'orange' }}> Dalam Format PNG / PDF</span>
+                </Text>
               </Box>
             </Box>
 
@@ -72,55 +75,57 @@ export const Catalog = () => {
               alignItems="center"
               justifyContent="center"
             >
-              {Object.values(data[category]).flat().map((item, index) => (
-                <Box
-                  key={item.id}
-                  position="relative"
-                  width="100%"
-                  background="gray.200"
-                  height="auto"
-                  borderRadius="md"
-                  overflow="hidden"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  shadow="md"
-                  transition="transform 0.3s ease, box-shadow 0.3s ease"
-                  _hover={{
-                    transform: 'scale(1.1)',
-                    boxShadow: 'lg'
-                  }}
-                  onClick={() => handleImageClick(Object.values(data[category]).flat(), index)} 
-                >
-                                    <Box
+              {Object.keys(data[packet].category).map((category) =>
+                data[packet].category[category].map((item, index) => (
+                  <Box
+                    key={item.id}
+                    position="relative"
                     width="100%"
-                    height="100%"
+                    background="gray.200"
+                    height="auto"
+                    borderRadius="md"
+                    overflow="hidden"
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
-                    transition="transform 0.3s ease"
+                    shadow="md"
+                    transition="transform 0.3s ease, box-shadow 0.3s ease"
+                    _hover={{
+                      transform: 'scale(1.1)',
+                      boxShadow: 'lg'
+                    }}
+                    onClick={() => handleImageClick(data[packet].category[category], index)} 
                   >
-                    <Image
-                      src={`https://ads.andikads.my.id${item.url}`}
-                      alt={`Image ${item.id}`}
-                      maxH="400px"
-                      flex={1}
-                      objectFit="contain"
-                      borderRadius="md"
-                      onLoad={(e) => {
-                        e.target.style.opacity = 1;
-                      }}
-                      style={{ opacity: 0 }}
-                    />
+                    <Box
+                      width="100%"
+                      height="100%"
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      transition="transform 0.3s ease"
+                    >
+                      <Image
+                        src={`https://ads.andikads.my.id${item.url}`}
+                        alt={`Image ${item.id}`}
+                        maxH="400px"
+                        flex={1}
+                        objectFit="contain"
+                        borderRadius="md"
+                        onLoad={(e) => {
+                          e.target.style.opacity = 1;
+                        }}
+                        style={{ opacity: 0 }}
+                      />
+                    </Box>
                   </Box>
-                </Box>
-              ))}
+                ))
+              )}
             </Grid>
           </Box>
         ))}
       </Stack>
 
       <ImageViewer images={selectedImages} isOpen={isOpen} onClose={onClose} initialIndex={currentIndex} />
-      </Box>
+    </Box>
   );
 };
