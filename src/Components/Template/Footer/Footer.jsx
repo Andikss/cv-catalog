@@ -29,18 +29,22 @@ export const Footer = () => {
   
           <Flex gap={2}>
             <SocialMedia
+              link="https://instagram.com/toplokercom"
               icon={FaInstagram}
               label="Instagram"
             />
             <SocialMedia
+              link="https://tiktok/@toploker.com"
               icon={FaTiktok}
               label="TikTok"
             />
             <SocialMedia
+              link="https://www.youtube.com/@LowonganKerjaTop"
               icon={FaYoutube}
               label="YouTube"
             />
             <SocialMedia
+              link="https://"
               icon={FaWhatsapp}
               label="WhatsApp"
             />

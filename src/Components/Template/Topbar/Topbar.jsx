@@ -93,23 +93,23 @@ export const Topbar = () => {
                   as={Link}
                   href='#packet-1'
                   variant="ghost" 
-                  leftIcon={<MdFilePresent />} 
+                  leftIcon={<MdMail />} 
                   textAlign="start" 
                   justifyContent="flex-start" 
                   onClick={(e) => handleSmoothScroll(e, 'packet-1')}
                 >
-                  CV ATS
+                  Surat Lamaran
                 </Button>
                 <Button 
                   as={Link}
                   href='#packet-2'
                   variant="ghost" 
-                  leftIcon={<MdMail />} 
+                  leftIcon={<MdFilePresent />} 
                   textAlign="start" 
                   justifyContent="flex-start" 
                   onClick={(e) => handleSmoothScroll(e, 'packet-2')}
                 >
-                  Surat Lamaran
+                  CV ATS
                 </Button>
                 <Button 
                   as={Link}
