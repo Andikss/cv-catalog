@@ -43,7 +43,11 @@ export const Catalog = () => {
 
   return (
     <Box width="100%">
-      <CatalogTitle />
+      <CatalogTitle 
+        label="Pilihan Terbaik"
+        title="Pilihan CV Terbaik"
+        description="Kami memiliki berbagai pilihan CV professional terbaik untukmu dengan paket yang menyesuaikan isi kantongmu"
+      />
 
       <Stack height="auto" spacing={6} mt="80px" px={{ base: 2, md: '80px' }}>
         {Object.keys(data).map((category) => (

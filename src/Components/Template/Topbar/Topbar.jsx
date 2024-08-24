@@ -10,7 +10,7 @@ export const Topbar = () => {
       transform="translateX(-50%)" 
       width="94%"
       bg="rgba(240, 240, 240, 0.8)" 
-      color="gray.600"
+      color="#344767"
       py={4}
       px={8}
       boxShadow="md"
