@@ -91,51 +91,56 @@ export const Topbar = () => {
               >
                 <Button 
                   as={Link}
-                  href='#packet-mail'
-                  variant="ghost" 
-                  leftIcon={<MdMail />} 
-                  textAlign="start" 
-                  justifyContent="flex-start" 
-                >
-                  Surat Lamaran
-                </Button>
-                <Button 
-                  as={Link}
-                  href='#packet-cv'
+                  href='#packet-1'
                   variant="ghost" 
                   leftIcon={<MdFilePresent />} 
                   textAlign="start" 
                   justifyContent="flex-start" 
+                  onClick={(e) => handleSmoothScroll(e, 'packet-1')}
                 >
                   CV ATS
                 </Button>
                 <Button 
                   as={Link}
-                  href='#packet-regular'
+                  href='#packet-2'
+                  variant="ghost" 
+                  leftIcon={<MdMail />} 
+                  textAlign="start" 
+                  justifyContent="flex-start" 
+                  onClick={(e) => handleSmoothScroll(e, 'packet-2')}
+                >
+                  Surat Lamaran
+                </Button>
+                <Button 
+                  as={Link}
+                  href='#packet-3'
                   variant="ghost" 
                   leftIcon={<HiRectangleStack />} 
                   textAlign="start" 
                   justifyContent="flex-start" 
+                  onClick={(e) => handleSmoothScroll(e, 'packet-3')}
                 >
                   Paket Regular
                 </Button>
                 <Button 
                   as={Link}
-                  href='#packet-premium'
+                  href='#packet-4'
                   variant="ghost" 
                   leftIcon={<BiStar />} 
                   textAlign="start" 
                   justifyContent="flex-start" 
+                  onClick={(e) => handleSmoothScroll(e, 'packet-4')}
                 >
                   Paket Premium
                 </Button>
                 <Button 
                   as={Link}
-                  href='#packet-platinum'
+                  href='#packet-5'
                   variant="ghost" 
                   leftIcon={<MdPayment />} 
                   textAlign="start" 
                   justifyContent="flex-start" 
+                  onClick={(e) => handleSmoothScroll(e, 'packet-5')}
                 >
                   Paket Platinum
                 </Button>

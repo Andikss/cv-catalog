@@ -52,7 +52,7 @@ export const Catalog = () => {
 
       <Stack height="auto" spacing={6} mt="80px" px={{ base: 2, md: '80px' }}>
         {data.map((packet) => (
-          <Box key={packet.id} width="100%" display="flex" flexDirection={{ base: "column", md: "row" }} mb={5}>
+          <Box id={`packet-${packet.id}`} key={packet.id} width="100%" display="flex" flexDirection={{ base: "column", md: "row" }} mb={5}>
             <Box width={{ base: '100%', md: '25%' }}>
               <Box position="sticky" top="100px">
                 <Box position="relative">
