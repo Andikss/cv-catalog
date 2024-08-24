@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
+import { Box, Image, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, useToast, Tooltip } from '@chakra-ui/react';
+import { FaChevronLeft, FaChevronRight, FaDownload } from 'react-icons/fa6';
 import PropTypes from 'prop-types';
-import { Box, Image, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay } from '@chakra-ui/react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
 export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const toast = useToast();
 
   useEffect(() => {
-    setCurrentIndex(initialIndex); // Reset to the clicked image index
+    setCurrentIndex(initialIndex); 
   }, [initialIndex, images]);
 
   const handleNext = () => {
@@ -18,9 +19,49 @@ export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
+  const handleDownload = () => {
+    const currentImage = images[currentIndex];
+    const fileName = currentImage.url.split('/').pop();
+
+    fetch(`https://ads.andikads.my.id${currentImage.url}`)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const blobUrl = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = blobUrl;
+        link.setAttribute('download', fileName);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(blobUrl);
+      })
+      .then(() => {
+        toast({
+          title: 'Berhasil!',
+          description: 'Konten berhasil diunduh 😁',
+          status: 'success',
+          position: 'bottom-right',
+          duration: 5000,
+          isClosable: true,
+          variant: 'solid',
+        });
+      })
+      .catch(() => {
+        toast({
+          title: 'Oops!',
+          description: 'Terjadi kesalahan saat mengunduh konten 🤕',
+          status: 'error',
+          position: 'bottom-right',
+          duration: 5000,
+          isClosable: true,
+          variant: 'solid',
+        });
+      });
+  };
+
   if (!images || images.length === 0) {
     return (
-      <Modal isOpen={isOpen} onClose={onClose} size="full">
+      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
@@ -35,16 +76,16 @@ export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
   const currentImage = images[currentIndex];
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="lg">
+    <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent maxWidth="none" width="auto">
         <ModalCloseButton />
         <ModalBody p={0} display="flex" justifyContent="center" alignItems="center" position="relative">
           <IconButton
             aria-label="Previous"
             icon={<FaChevronLeft />}
-            position="absolute"
-            left="-60px"
+            position="fixed"
+            left="20px"
             zIndex="10"
             onClick={handlePrev}
             borderRadius="50%"
@@ -53,21 +94,35 @@ export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
           <IconButton
             aria-label="Next"
             icon={<FaChevronRight />}
-            position="absolute"
-            right="-60px"
+            position="fixed"
+            right="20px"
             zIndex="10"
             onClick={handleNext}
             borderRadius="50%"
             shadow="lg"
           />
-          <Box width="100%" height="100%" display="flex" justifyContent="center" alignItems="center">
+          <Tooltip hasArrow label="Unduh Konten">
+            <IconButton
+              colorScheme="teal"
+              aria-label="Download"
+              icon={<FaDownload />}
+              position="absolute"
+              top="20px"
+              right="20px"
+              zIndex="10"
+              onClick={handleDownload}
+              borderRadius="50%"
+              shadow="lg"
+            />
+          </Tooltip>
+          <Box display="flex" justifyContent="center" alignItems="center">
             {currentImage ? (
               <Image
                 src={`https://ads.andikads.my.id${currentImage.url}`}
                 alt={`Image ${currentImage.id}`}
                 objectFit="contain"
-                width="100%"
-                height="auto"
+                maxW="90vw"
+                maxH="90vh"
               />
             ) : (
               <Box>No image available</Box>
@@ -79,7 +134,6 @@ export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
   );
 };
 
-// PropTypes validation
 ImageViewer.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
@@ -89,5 +143,5 @@ ImageViewer.propTypes = {
   ).isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  initialIndex: PropTypes.number.isRequired, // Add initialIndex prop validation
+  initialIndex: PropTypes.number.isRequired,
 };
