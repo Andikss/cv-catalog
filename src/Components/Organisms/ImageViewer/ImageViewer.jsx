@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Box, Image, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, useToast, Tooltip } from '@chakra-ui/react';
-import { FaChevronLeft, FaChevronRight, FaDownload } from 'react-icons/fa6';
+import { Box, Image, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, useToast, Tooltip, Link } from '@chakra-ui/react';
+import { FaChevronLeft, FaChevronRight, FaDownload, FaWhatsapp } from 'react-icons/fa6';
 import PropTypes from 'prop-types';
 
 export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
@@ -59,6 +59,12 @@ export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
       });
   };
 
+  const whatsappMessage = encodeURIComponent(
+    `Hallo kakak, saya ingin membeli paket CV berikut: https://ads.andikads.my.id/${images[currentIndex]?.url}, apakah masih tersedia?`
+  );
+
+  const whatsappLink = `https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}?text=${whatsappMessage}`;
+
   if (!images || images.length === 0) {
     return (
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -111,6 +117,22 @@ export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
               right="20px"
               zIndex="10"
               onClick={handleDownload}
+              borderRadius="50%"
+              shadow="lg"
+            />
+          </Tooltip>
+          <Tooltip hasArrow label="Hubungi di WhatsApp">
+            <IconButton
+              colorScheme="whatsapp"
+              aria-label="WhatsApp"
+              icon={<FaWhatsapp />}
+              position="absolute"
+              top="70px"
+              right="20px"
+              zIndex="10"
+              as={Link}
+              href={whatsappLink}
+              target="_blank"
               borderRadius="50%"
               shadow="lg"
             />

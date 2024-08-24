@@ -1,5 +1,5 @@
 import { Box, Card, CardBody, Image, Stack } from '@chakra-ui/react';
-import { Topbar } from '../Components';
+import { Topbar, Footer } from '../Components';
 import { Stats, Catalog, Details } from '../Features/Home';
 
 const Home = () => {
@@ -10,11 +10,10 @@ const Home = () => {
       <Box width="100%" height="auto">
         <Image src="assets/banner.jpg" width="100%" height="440px" />
 
-        {/* Stats Section */}
         <Box p={{ base: 2, sm: 2, md: 6, xl: 6 }}>
           <Card
-            pb="1000px"
-            shadow="xl"
+            pb="100px"
+            boxShadow="0 10px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05)"
             border="none"
             height="auto"
             marginTop="-100px"
@@ -29,6 +28,8 @@ const Home = () => {
               </Stack>
             </CardBody>
           </Card>
+
+          <Footer/>
         </Box>
       </Box>
     </Box>

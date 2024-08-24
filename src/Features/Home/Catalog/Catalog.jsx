@@ -1,4 +1,4 @@
-import { Box, Grid, Image, Stack, Text, useDisclosure } from "@chakra-ui/react";
+import { Box, Grid, Image, Spinner, Stack, Text, useDisclosure } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { CatalogTitle, ImageViewer } from "../../../Components";
 import { gsap } from "gsap";
@@ -33,12 +33,12 @@ export const Catalog = () => {
 
   const handleImageClick = (images, index) => {
     setSelectedImages(images);
-    setCurrentIndex(index); // Set the index of the clicked image
+    setCurrentIndex(index); 
     onOpen();
   };
   
   if (!data) {
-    return <Text>Loading...</Text>;
+    return <Spinner colorScheme="teal" size="md"/>;
   }
 
   return (
@@ -49,7 +49,7 @@ export const Catalog = () => {
         {Object.keys(data).map((category) => (
           <Box key={category} width="100%" display="flex" flexDirection={{ base: "column", md: "row" }} mb={5}>
             <Box width={{ base: '100%', md: '25%' }}>
-              <Text fontWeight="900" fontSize="xx-large" position="sticky" top="100px">
+              <Text fontWeight="900" fontSize="xx-large" position="sticky" top="100px" color="#344767">
                 {category}
               </Text>
             </Box>
