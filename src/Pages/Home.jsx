@@ -1,6 +1,6 @@
 import { Box, Card, CardBody, Image, Stack } from '@chakra-ui/react';
-import { Topbar, Footer } from '../Components';
-import { Stats, Catalog, Details } from '../Features/Home';
+import { Stats, Catalog, Details } from '@/Features/Home';
+import { Topbar, Footer } from '@/Components';
 
 const Home = () => {
   return (

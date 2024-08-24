@@ -1,7 +1,7 @@
 import { Card, CardBody, Flex, Grid } from "@chakra-ui/react";
 import { FaClockRotateLeft } from "react-icons/fa6";
-import { Detail } from "../../../Components";
 import { motion } from "framer-motion";
+import { Detail } from "@/Components";
 
 const MotionFlex = motion(Flex);
 const MotionGrid = motion(Grid);

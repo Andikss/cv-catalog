@@ -1,6 +1,6 @@
 import { Box, Grid, Image, Spinner, Stack, Text, useDisclosure } from "@chakra-ui/react";
+import { CatalogTitle, ImageViewer } from "@/Components";
 import { useEffect, useState } from "react";
-import { CatalogTitle, ImageViewer } from "../../../Components";
 import { gsap } from "gsap";
 
 export const Catalog = () => {

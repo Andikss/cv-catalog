@@ -1,5 +1,5 @@
 import { Grid } from '@chakra-ui/react'
-import { Stat } from '../../../Components'
+import { Stat } from '@/Components'
 
 export const Stats = () => {
   return (
