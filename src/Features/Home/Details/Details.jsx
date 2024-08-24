@@ -12,7 +12,7 @@ export const Details = () => {
       maxW="container.xl"
       minH="400px" 
       gap={6}
-      p={{ base: 4, md: 6 }}
+      p={{ base: 0, md: 6 }}
     >
       <Card
         background="gray.400"

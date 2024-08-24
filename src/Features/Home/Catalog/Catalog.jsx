@@ -92,6 +92,7 @@ export const Catalog = () => {
                       src={`https://ads.andikads.my.id${item.url}`}
                       alt={`Image ${item.id}`}
                       maxH="400px"
+                      flex={1}
                       objectFit="contain"
                       borderRadius="md"
                       onLoad={(e) => {
