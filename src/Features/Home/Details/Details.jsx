@@ -2,6 +2,8 @@ import { Card, CardBody, Flex, Grid } from "@chakra-ui/react";
 import { FaClockRotateLeft } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { Detail } from "@/Components";
+import { GiPortal } from "react-icons/gi";
+import { MdDiscount, MdFilePresent } from "react-icons/md";
 
 const MotionFlex = motion(Flex);
 const MotionGrid = motion(Grid);
@@ -43,22 +45,22 @@ export const Details = () => {
         <Detail
           icon={FaClockRotateLeft}
           title="Menghemat Waktu"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, nihil rem at, doloribus nisi totam minus quisquam ducimus molestias aspernatur earum aut ex modi ad facilis ea vitae quasi laboriosam!"
+          description="Anda tidak perlu susah payah melakukan editing CV dengan software editing seperti Photoshop dan lainnya, kami akan membuatkan CV terbaik untuk kamu mendapatkan pekerjaan yang paling kamu impikan."
         />
         <Detail
-          icon={FaClockRotateLeft}
-          title="Menghemat Waktu"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, nihil rem at, doloribus nisi totam minus quisquam ducimus molestias aspernatur earum aut ex modi ad facilis ea vitae quasi laboriosam!"
+          icon={MdFilePresent}
+          title="CV Professional"
+          description="Tidak perlu takut diabaikan oleh HRD dikarenakan CV kamu tidak menarik dan professional. Kami akan menciptakan CV professional yang akan menarik para HRD untuk menerima kamu sebagai kandidat baru bagi perusahaan"
         />
         <Detail
-          icon={FaClockRotateLeft}
-          title="Menghemat Waktu"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, nihil rem at, doloribus nisi totam minus quisquam ducimus molestias aspernatur earum aut ex modi ad facilis ea vitae quasi laboriosam!"
+          icon={MdDiscount}
+          title="Harga Terjangkau"
+          description="Khawatir kami akan menguras isi dompetmu? tenang saja.. kami tahu persis bahwa kamu adalah seorang pencari kerja, hanya mulai dari Rp.xxxxxxx saja kami akan tetap memberikan CV terbaik untuk kamu."
         />
         <Detail
-          icon={FaClockRotateLeft}
-          title="Menghemat Waktu"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, nihil rem at, doloribus nisi totam minus quisquam ducimus molestias aspernatur earum aut ex modi ad facilis ea vitae quasi laboriosam!"
+          icon={GiPortal}
+          title="Portal Terpercaya"
+          description="Kami menyediakan portal loker Nomor #1 di Indonesia, setelah kamu mendapatkan CV dari kami, akan kami fasilitasi portal untuk anda melanjutkan perjalanan karir anda dalam mencari pekerjaan."
         />
       </MotionGrid>
     </MotionFlex>
