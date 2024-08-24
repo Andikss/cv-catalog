@@ -53,9 +53,15 @@ export const Catalog = () => {
         {Object.keys(data).map((category) => (
           <Box key={category} width="100%" display="flex" flexDirection={{ base: "column", md: "row" }} mb={5}>
             <Box width={{ base: '100%', md: '25%' }}>
-              <Text fontWeight="900" fontSize="xx-large" position="sticky" top="100px" color="#344767">
-                {category}
-              </Text>
+              <Box position="sticky" top="100px">
+                <Box position="relative">
+                  <Text fontWeight="900" fontSize="xx-large" color="#344767">
+                    {category}
+                  </Text>
+  
+                  <Box position="absolute" bottom={1} left={0} width="60px" borderTop="4px solid" borderColor="#344767"></Box>
+                </Box>
+              </Box>
             </Box>
 
             <Grid
