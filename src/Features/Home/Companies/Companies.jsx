@@ -13,7 +13,7 @@ const scrollAnimation = keyframes`
 
 export const Companies = () => {
   return (
-    <Box width="100%" height="auto" px={{ base: 2, md: '80px' }} overflow="hidden">
+    <Box width="100%" height="auto" px={{ base: 2, md: '80px' }} overflow="hidden" id="companies">
       <CatalogTitle
         label="Terpercaya"
         title="Dipercaya Oleh Perusahaan"

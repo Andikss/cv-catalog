@@ -42,7 +42,7 @@ export const Catalog = () => {
   }
 
   return (
-    <Box width="100%">
+    <Box width="100%" id="catalog">
       <CatalogTitle 
         label="Pilihan Terbaik"
         title="Pilihan CV Terbaik"
