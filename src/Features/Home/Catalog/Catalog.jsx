@@ -7,6 +7,7 @@ export const Catalog = () => {
   const [data, setData] = useState(null);
   const [selectedImages, setSelectedImages] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,11 +31,12 @@ export const Catalog = () => {
     );
   }, [data]);
 
-  const handleImageClick = (images) => {
+  const handleImageClick = (images, index) => {
     setSelectedImages(images);
+    setCurrentIndex(index); // Set the index of the clicked image
     onOpen();
   };
-
+  
   if (!data) {
     return <Text>Loading...</Text>;
   }
@@ -60,7 +62,7 @@ export const Catalog = () => {
               alignItems="center"
               justifyContent="center"
             >
-              {Object.values(data[category]).flat().map((item) => (
+              {Object.values(data[category]).flat().map((item, index) => (
                 <Box
                   key={item.id}
                   position="relative"
@@ -78,9 +80,9 @@ export const Catalog = () => {
                     transform: 'scale(1.1)',
                     boxShadow: 'lg'
                   }}
-                  onClick={() => handleImageClick(Object.values(data[category]).flat())}
+                  onClick={() => handleImageClick(Object.values(data[category]).flat(), index)} 
                 >
-                  <Box
+                                    <Box
                     width="100%"
                     height="100%"
                     display="flex"
@@ -108,7 +110,7 @@ export const Catalog = () => {
         ))}
       </Stack>
 
-      <ImageViewer images={selectedImages} isOpen={isOpen} onClose={onClose} />
-    </Box>
+      <ImageViewer images={selectedImages} isOpen={isOpen} onClose={onClose} initialIndex={currentIndex} />
+      </Box>
   );
 };

@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Box, Image, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay } from '@chakra-ui/react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
-export const ImageViewer = ({ images, isOpen, onClose }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+
+  useEffect(() => {
+    setCurrentIndex(initialIndex); // Reset to the clicked image index
+  }, [initialIndex, images]);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -85,4 +89,5 @@ ImageViewer.propTypes = {
   ).isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
+  initialIndex: PropTypes.number.isRequired, // Add initialIndex prop validation
 };
