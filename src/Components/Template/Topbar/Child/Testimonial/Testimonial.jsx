@@ -1,6 +1,5 @@
 import { Link } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
-import { MdRateReview } from 'react-icons/md'
 
 export const Testimonial = ({ scroll }) => {
   return (
@@ -11,7 +10,7 @@ export const Testimonial = ({ scroll }) => {
       href="#testimonials"
       onClick={(e) => scroll(e, 'testimonials')}
     >
-      <MdRateReview /> Testimoni
+      Testimoni
     </Link>
   )
 }

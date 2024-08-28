@@ -1,5 +1,4 @@
 import { Link } from '@chakra-ui/react'
-import { BiBuilding } from 'react-icons/bi'
 import PropTypes from 'prop-types'
 
 export const Company = ({ scroll }) => {
@@ -11,7 +10,7 @@ export const Company = ({ scroll }) => {
       href="#companies"
       onClick={(e) => scroll(e, 'companies')}
     >
-      <BiBuilding /> Perusahaan
+      Perusahaan
     </Link>
   )
 }

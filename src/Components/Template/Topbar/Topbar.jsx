@@ -62,7 +62,7 @@ export const Topbar = () => {
           <Vacancy scroll={handleSmoothScroll} />
           <Company scroll={handleSmoothScroll} />
           <Testimonial scroll={handleSmoothScroll} />
-          <Developer />
+          {/* <Developer /> */}
         </Flex>
       </Flex>
 

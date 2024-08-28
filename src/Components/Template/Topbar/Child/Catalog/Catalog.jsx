@@ -1,4 +1,3 @@
-import { GrCatalog } from 'react-icons/gr';
 import { MdMail, MdFilePresent, MdPayment } from 'react-icons/md';
 import { HiRectangleStack } from 'react-icons/hi2';
 import { CollapseItem } from '@/Components';
@@ -16,7 +15,6 @@ export const Catalog = ({ scroll }) => {
 
   return (
     <CollapseItem 
-      icon={<GrCatalog />} 
       label="Katalog" 
       items={catalogItems} 
       scroll={scroll} 

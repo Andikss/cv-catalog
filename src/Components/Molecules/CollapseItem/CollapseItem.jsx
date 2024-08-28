@@ -80,7 +80,7 @@ export const CollapseItem = ({ icon, label, items, scroll }) => {
 };
 
 CollapseItem.propTypes = {
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.element,
   label: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.oneOfType([

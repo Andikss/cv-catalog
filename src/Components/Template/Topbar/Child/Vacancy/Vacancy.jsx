@@ -1,6 +1,6 @@
 import { MdPostAdd, MdRecommend, MdListAlt } from 'react-icons/md';
 import { CollapseItem } from '@/Components';
-import { BsInstagram, BsPostcard } from 'react-icons/bs';
+import { BsInstagram } from 'react-icons/bs';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 export const Vacancy = () => {
@@ -17,7 +17,6 @@ export const Vacancy = () => {
 
   return (
     <CollapseItem 
-      icon={<BsPostcard />} 
       label="Lowongan" 
       items={VacancyItems} 
     />
