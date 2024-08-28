@@ -75,7 +75,7 @@ export const Details = () => {
 
       <Image
         src="assets/content.png"
-        maxH="400px"
+        maxH="500px"
         flex={1}
         objectFit="contain"
       />
