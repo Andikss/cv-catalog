@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import { Box, Image, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, useToast, Tooltip, Link } from '@chakra-ui/react';
 import { FaChevronLeft, FaChevronRight, FaDownload, FaWhatsapp } from 'react-icons/fa6';
 import PropTypes from 'prop-types';
+import { useSwipeable } from 'react-swipeable';
 
 export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const toast = useToast();
 
   useEffect(() => {
-    setCurrentIndex(initialIndex); 
+    setCurrentIndex(initialIndex);
   }, [initialIndex, images]);
 
   const handleNext = () => {
@@ -65,6 +66,14 @@ export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
 
   const whatsappLink = `https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}?text=${whatsappMessage}`;
 
+  // Ensure the hook is called unconditionally
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleNext(),
+    onSwipedRight: () => handlePrev(),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true
+  });
+
   if (!images || images.length === 0) {
     return (
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -86,7 +95,7 @@ export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
       <ModalOverlay />
       <ModalContent maxWidth="none" width="auto">
         <ModalCloseButton />
-        <ModalBody p={0} display="flex" justifyContent="center" alignItems="center" position="relative">
+        <ModalBody p={0} display="flex" justifyContent="center" alignItems="center" position="relative" {...handlers}>
           <IconButton
             aria-label="Previous"
             icon={<FaChevronLeft />}
