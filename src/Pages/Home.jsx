@@ -1,5 +1,5 @@
 import { Box, Card, CardBody, Image, Stack } from '@chakra-ui/react';
-import { Stats, Catalog, Details, Portfolio, Companies, Testimonials } from '@/Features/Home';
+import { Stats, Catalog, Details, Portfolio, Companies, Testimonials, Popup } from '@/Features/Home';
 import { Topbar, Footer, Whatsapp, GoToTop } from '@/Components';
 
 const Home = () => {
@@ -38,6 +38,9 @@ const Home = () => {
       {/* Floating Button */}
       <GoToTop />
       <Whatsapp />
+
+      {/* Popup */}
+      <Popup/>
     </Box>
   );
 };
