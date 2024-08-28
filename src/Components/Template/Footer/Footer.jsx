@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <Box width="100%" height="auto" px={{ base: 2, md: '100px' }} pt="100px" pb="50px" position="relative">
       <Flex direction={{ base: 'column', md: 'row' }}>
-        <Box height="200px" width={{ base: "100%", md: "25%" }} display="flex" flexDirection="column" gap={2}>
+        <Box height={{ base: "auto", md: "200px" }} mb="40px" width={{ base: "100%", md: "25%" }} display="flex" flexDirection="column" gap={2}>
           <FooterItem
             href='https://toploker.com'
             label='Tentang Toploker.com'
@@ -24,7 +24,7 @@ export const Footer = () => {
             label='Faq'
           />
         </Box>
-        <Box height="200px" width={{ base: "100%", md: "25%" }} display="flex" flexDirection="column" gap={3}>
+        <Box height={{ base: "auto", md: "200px" }} mb="40px" width={{ base: "100%", md: "25%" }} display="flex" flexDirection="column" gap={3}>
           <FooterItem label="Social Media"/>
   
           <Flex gap={2}>
@@ -54,7 +54,7 @@ export const Footer = () => {
             label="Ikuti kami di sosial media"
           />
         </Box>
-        <Box height="200px" width={{ base: "100%", md: "25%" }} display="flex" flexDirection="column" gap={2}>
+        <Box height={{ base: "auto", md: "200px" }} mb="40px" width={{ base: "100%", md: "25%" }} display="flex" flexDirection="column" gap={2}>
           <FooterItem label="Developer"/>
 
           {/* GitHub Popover */}
@@ -94,7 +94,7 @@ export const Footer = () => {
             </PopoverContent>
           </Popover>
         </Box>
-        <Box height="200px" width={{ base: "100%", md: "25%" }} display="flex" flexDirection="column" gap={2}>
+        <Box height={{ base: "auto", md: "200px" }} mb="40px" width={{ base: "100%", md: "25%" }} display="flex" flexDirection="column" gap={2}>
           <FooterItem label="Copyright"/>
 
           <Link href='https://toploker.com' target='_blank'>
