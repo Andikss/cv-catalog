@@ -114,9 +114,7 @@ export const Testimonials = () => {
 
       <Box
         position="relative"
-        padding={4} 
         borderRadius="md" 
-        shadow="md" 
         width="100%"
       >
         <Image
