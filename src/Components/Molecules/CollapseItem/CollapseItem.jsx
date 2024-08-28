@@ -23,7 +23,7 @@ export const CollapseItem = ({ icon, label, items, scroll }) => {
         <Box
           position="absolute" 
           top="100%" 
-          left="0" 
+          left="-200%" 
           mt={2} 
           bg="white" 
           boxShadow="md" 
@@ -32,10 +32,19 @@ export const CollapseItem = ({ icon, label, items, scroll }) => {
           minW="200px" 
           display="flex" 
           flexDirection="column"
+          _before={{
+            content: '""',
+            position: 'absolute',
+            bottom: '100%',
+            right: '10px',
+            borderWidth: '8px',
+            borderStyle: 'solid',
+            borderColor: 'transparent transparent white transparent',
+          }}
         >
           {items.map((item, index) => (
             item.divider ? (
-              <Divider borderColor='black' key={index} />
+              <Divider borderColor="black" key={index} />
             ) : (
               <Button
                 key={index}
@@ -45,6 +54,7 @@ export const CollapseItem = ({ icon, label, items, scroll }) => {
                 leftIcon={item.icon} 
                 textAlign="start" 
                 justifyContent="flex-start" 
+                target='_blank'
                 onClick={(e) => {
                   if (scroll) {
                     e.preventDefault();
