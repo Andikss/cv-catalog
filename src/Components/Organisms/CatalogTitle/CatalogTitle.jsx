@@ -12,7 +12,7 @@ export const CatalogTitle = ({ label, title, description }) => {
         </Box>
       )}
   
-      <Heading mb={2} color="#344767">
+      <Heading mb={2} color="#344767" textAlign="center">
         {title}
       </Heading>
   
