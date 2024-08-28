@@ -14,6 +14,7 @@ export const Portfolio = () => {
         position="relative" 
         width="100%" 
         minH={{ base: "320px", md: "320px" }}
+        maxH={{ base: "auto", md: "320px" }}
         borderRadius="20px" 
         overflow="hidden" 
         mt={10}
