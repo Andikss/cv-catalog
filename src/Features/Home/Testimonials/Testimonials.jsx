@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import Slider from 'react-slick';
-import { Box, Text, Stack, Icon, Avatar, IconButton } from '@chakra-ui/react';
+import { Box, Text, Stack, Icon, Avatar, IconButton, Image } from '@chakra-ui/react';
 import { CatalogTitle } from '@/Components';
 import { FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import testimonialsData from './data.json';
@@ -110,6 +110,10 @@ export const Testimonials = () => {
           fontSize="lg"
           sx={buttonStylesRight} 
         />
+      </Box>
+
+      <Box>
+        <Image src='assets/review.png'/>
       </Box>
     </Box>
   );
