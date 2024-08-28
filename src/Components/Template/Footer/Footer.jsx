@@ -1,6 +1,6 @@
-import { Box, Flex, Image, Link } from '@chakra-ui/react';
+import { Box, Flex, Image, Link, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverHeader, PopoverBody, Text } from '@chakra-ui/react';
 import { FooterItem, SocialMedia } from '@/Components';
-import { FaInstagram, FaTiktok, FaWhatsapp, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaTiktok, FaWhatsapp, FaYoutube, FaGithub } from 'react-icons/fa';
 
 export const Footer = () => {
   return (
@@ -51,15 +51,54 @@ export const Footer = () => {
           </Flex>
   
           <FooterItem
-            href="https://andikss.github.io"
-            label="Contact Developer"
+            label="Ikuti kami di sosial media"
           />
         </Box>
-        <Box height="200px" width={{ base: "100%", md: "50%" }} display="flex" flexDirection="column" gap={2}>
-          <FooterItem label="Alamat Kami"/>
+        <Box height="200px" width={{ base: "100%", md: "25%" }} display="flex" flexDirection="column" gap={2}>
+          <FooterItem label="Developer"/>
 
-          <Link href='https://maps.app.goo.gl/AXLdd1w1pj9Yyuc2A'>
-            Jl. Majapahit No.304 RT 002 RW 008 Palebon Pedurungan Semarang - Jawa Tengah
+          {/* GitHub Popover */}
+          <Popover placement="bottom-start">
+            <PopoverTrigger>
+              <Link _hover={{ textDecoration: 'none' }}>
+                <Text>Contact Developer</Text>
+              </Link>
+            </PopoverTrigger>
+            <PopoverContent width="fit-content" p={4}>
+              <PopoverArrow />
+              <PopoverHeader textAlign="center">Andika Dwi Saputra</PopoverHeader>
+              <PopoverBody>
+                <Flex direction="column" align="start" gap={3}>
+                  <Flex width="100%" justifyContent="center">
+                    <Image
+                      src="https://github.com/Andikss.png" // Replace with the actual GitHub avatar URL
+                      alt="Andika Dwi Saputra"
+                      borderRadius="full"
+                      boxSize="80px"
+                    />
+                  </Flex>
+                  <Link href="https://github.com/Andikss" isExternal>
+                    <Flex align="center" gap={2}>
+                      <FaGithub />
+                      <Text>Visit GitHub Profile</Text>
+                    </Flex>
+                  </Link>
+                  <Link href="https://github.com/Andikss" isExternal>
+                    <Flex align="center" gap={2}>
+                      <FaGithub />
+                      <Text>Visit Portfolio</Text>
+                    </Flex>
+                  </Link>
+                </Flex>
+              </PopoverBody>
+            </PopoverContent>
+          </Popover>
+        </Box>
+        <Box height="200px" width={{ base: "100%", md: "25%" }} display="flex" flexDirection="column" gap={2}>
+          <FooterItem label="Copyright"/>
+
+          <Link href='https://toploker.com'>
+            &copy;Toploker.com@2024
           </Link>
         </Box>
       </Flex>
