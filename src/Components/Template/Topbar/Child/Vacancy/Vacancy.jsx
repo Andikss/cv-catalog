@@ -1,29 +1,25 @@
-import { GrCatalog } from 'react-icons/gr';
-import { MdMail, MdFilePresent, MdPayment } from 'react-icons/md';
-import { HiRectangleStack } from 'react-icons/hi2';
+import { MdPostAdd, MdRecommend, MdListAlt } from 'react-icons/md';
 import { CollapseItem } from '@/Components';
-import { BiStar } from 'react-icons/bi';
-import PropTypes from 'prop-types'
+import { BsInstagram, BsPostcard } from 'react-icons/bs';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 
-export const Vacancy = ({ scroll }) => {
-  const catalogItems = [
-    { href: 'packet-1', label: 'Surat Lamaran', icon: <MdMail /> },
-    { href: 'packet-2', label: 'CV ATS', icon: <MdFilePresent /> },
-    { href: 'packet-3', label: 'Paket Regular', icon: <HiRectangleStack /> },
-    { href: 'packet-4', label: 'Paket Premium', icon: <BiStar /> },
-    { href: 'packet-5', label: 'Paket Platinum', icon: <MdPayment /> },
+export const Vacancy = () => {
+  const VacancyItems = [
+    { href: 'https://toploker.com/lowongan-kerja-terbaru', label: 'Loker Terbaru', icon: <MdPostAdd /> },
+    { href: 'https://toploker.com/lowongan-kerja-rekomendasi/daftar', label: 'Loker Rekomendasi', icon: <MdRecommend /> },
+    { href: 'https://toploker.com/widget-ig/daftar', label: 'Akun Loker Instagram', icon: <BsInstagram /> },
+
+    { divider: true },
+
+    { href: 'https://toploker.com/jobfair/daftar', label: 'Jobfair', icon: <FaMagnifyingGlass /> },
+    { href: 'https://toploker.com/tips/list-tips', label: 'Tips Karir', icon: <MdListAlt /> },
   ];
 
   return (
     <CollapseItem 
-      icon={<GrCatalog />} 
-      label="Katalog" 
-      items={catalogItems} 
-      scroll={scroll} 
+      icon={<BsPostcard />} 
+      label="Lowongan" 
+      items={VacancyItems} 
     />
   );
 };
-
-Vacancy.propTypes = {
-  scroll: PropTypes.func.isRequired
-}

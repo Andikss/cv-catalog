@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Button, Collapse, Link } from '@chakra-ui/react';
+import { Box, Button, Collapse, Divider, Link } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
 export const CollapseItem = ({ icon, label, items, scroll }) => {
@@ -16,7 +16,6 @@ export const CollapseItem = ({ icon, label, items, scroll }) => {
         alignItems="center"
         gap={1}
         href={`#${label.toLowerCase()}`}
-        onClick={(e) => scroll(e, label.toLowerCase())}
       >
         {icon} {label}
       </Link>
@@ -35,18 +34,27 @@ export const CollapseItem = ({ icon, label, items, scroll }) => {
           flexDirection="column"
         >
           {items.map((item, index) => (
-            <Button
-              key={index}
-              as={Link}
-              href={`#${item.href}`}
-              variant="ghost" 
-              leftIcon={item.icon} 
-              textAlign="start" 
-              justifyContent="flex-start" 
-              onClick={(e) => scroll(e, item.href)}
-            >
-              {item.label}
-            </Button>
+            item.divider ? (
+              <Divider borderColor='black' key={index} />
+            ) : (
+              <Button
+                key={index}
+                as={Link}
+                href={item.href}
+                variant="ghost" 
+                leftIcon={item.icon} 
+                textAlign="start" 
+                justifyContent="flex-start" 
+                onClick={(e) => {
+                  if (scroll) {
+                    e.preventDefault();
+                    scroll(e, item.href);
+                  }
+                }}
+              >
+                {item.label}
+              </Button>
+            )
           ))}
         </Box>
       </Collapse>
@@ -58,11 +66,16 @@ CollapseItem.propTypes = {
   icon: PropTypes.element.isRequired,
   label: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
-    PropTypes.shape({
-      href: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      icon: PropTypes.element.isRequired,
-    })
+    PropTypes.oneOfType([
+      PropTypes.shape({
+        href: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        icon: PropTypes.element.isRequired,
+      }),
+      PropTypes.shape({
+        divider: PropTypes.bool,
+      })
+    ])
   ).isRequired,
-  scroll: PropTypes.func.isRequired,
+  scroll: PropTypes.func,
 };
