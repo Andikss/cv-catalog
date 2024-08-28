@@ -49,9 +49,11 @@ export const GoToTop = () => {
           icon={<FaArrowUp />}
           isRound
           size="lg"
-          colorScheme="blue"
+          background="#4b8bfa"
+          color="white"
           aria-label="Go to Top"
           onClick={scrollToTop}
+          _hover={{ background: 'blue.600' }}
         />
       </Tooltip>
     </Box>
