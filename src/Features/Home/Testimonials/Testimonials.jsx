@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import Slider from 'react-slick';
-import { Box, Text, Stack, Icon, Avatar, IconButton, Image } from '@chakra-ui/react';
+import { Box, Text, Stack, Icon, Avatar, IconButton, Image, Link } from '@chakra-ui/react';
 import { CatalogTitle } from '@/Components';
 import { FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import testimonialsData from './data.json';
@@ -112,8 +112,37 @@ export const Testimonials = () => {
         />
       </Box>
 
-      <Box>
-        <Image src='assets/review.png'/>
+      <Box
+        position="relative"
+        padding={4} 
+        borderRadius="md" 
+        shadow="md" 
+        width="100%"
+      >
+        <Image
+          src='assets/review.png'
+          alt='Review'
+          zIndex={1}
+          width="full"
+          objectFit="contain" 
+        />
+  
+        <Box
+          position="absolute"
+          bottom={{ base: "30px", md: "60px" }}
+          right="0" 
+          zIndex={3}
+          textAlign="center"
+          color="white"
+          width="73%"
+        >
+          <Text fontWeight="bold" fontSize={{ base: "xs", md: "x-large" }}>
+            Cek Review Testimoni di Instagram Kami
+          </Text>
+          <Link href="https://instagram.com/jasadesincv.top" fontSize={{ base: "xs", md: "md" }} isExternal>
+            <i>@jasadesincv.top</i>
+          </Link>
+        </Box>
       </Box>
     </Box>
   );
