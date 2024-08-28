@@ -1,15 +1,21 @@
 import { useState } from 'react';
-import { Box, Button, Collapse, Divider, Link } from '@chakra-ui/react';
+import { Box, Button, Collapse, Divider, Link, useBreakpointValue } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
 export const CollapseItem = ({ icon, label, items, scroll }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <Box
       position="relative"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => !isMobile && setIsOpen(true)}
+      onMouseLeave={() => !isMobile && setIsOpen(false)}
+      onClick={isMobile ? handleToggle : undefined}
     >
       <Link
         display="flex"
@@ -19,11 +25,11 @@ export const CollapseItem = ({ icon, label, items, scroll }) => {
       >
         {icon} {label}
       </Link>
-      <Collapse in={isHovered} animateOpacity>
+      <Collapse in={isOpen} animateOpacity>
         <Box
           position="absolute" 
           top="100%" 
-          left="-200%" 
+          left={isMobile ? '0' : '-200%'} 
           mt={2} 
           bg="white" 
           boxShadow="md" 
@@ -34,6 +40,7 @@ export const CollapseItem = ({ icon, label, items, scroll }) => {
           flexDirection="column"
           _before={{
             content: '""',
+            display: isMobile ? 'none' : 'block',
             position: 'absolute',
             bottom: '100%',
             right: '10px',

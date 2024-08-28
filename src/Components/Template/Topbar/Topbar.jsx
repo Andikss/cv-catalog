@@ -8,9 +8,12 @@ export const Topbar = () => {
 
   const handleSmoothScroll = (event, targetId) => {
     event.preventDefault();
-
+    event.stopPropagation();
+  
     const targetElement = document.getElementById(targetId);
-
+    console.log(targetId);
+    console.log(targetElement);
+  
     if (targetElement) {
       window.scrollTo({
         top: targetElement.getBoundingClientRect().top + window.pageYOffset - 120,
@@ -18,6 +21,7 @@ export const Topbar = () => {
       });
     }
   };
+  
 
   return (
     <Flex
@@ -69,7 +73,9 @@ export const Topbar = () => {
           display={{ base: 'flex', md: 'none' }}
           flexDirection="column"
           alignItems="center"
-          gap={2}
+          width="90vw" 
+          height="90dvh"
+          gap={5}
           mt={4}
         >
           <Catalog scroll={handleSmoothScroll} />
