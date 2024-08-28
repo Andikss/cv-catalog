@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export const FooterItem = ({ href, label }) => {
   return (
-    <Link href={href} fontWeight="bold" fontSize="md" color="#344767">
+    <Link href={href} fontWeight="bold" fontSize="md" color="#344767" target='_blank'>
       {label}
     </Link>
   )

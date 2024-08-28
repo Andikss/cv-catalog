@@ -24,9 +24,9 @@ const Home = () => {
                 <Stats/>
                 <Details/>
                 <Catalog/>
-                <Companies/>
                 <Portfolio/>
                 <Testimonials/>
+                <Companies/>
               </Stack>
             </CardBody>
           </Card>

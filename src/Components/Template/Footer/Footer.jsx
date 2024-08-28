@@ -97,7 +97,7 @@ export const Footer = () => {
         <Box height="200px" width={{ base: "100%", md: "25%" }} display="flex" flexDirection="column" gap={2}>
           <FooterItem label="Copyright"/>
 
-          <Link href='https://toploker.com'>
+          <Link href='https://toploker.com' target='_blank'>
             &copy;Toploker.com@2024
           </Link>
         </Box>
