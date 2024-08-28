@@ -23,29 +23,29 @@ export const Companies = () => {
       <Box position="relative" width="100%" height="80px" mt="60px">
         <Flex
           position="absolute"
-          width="200%" // Adjusted width to ensure seamless scrolling
+          width="200%" 
           height="100%"
           alignItems="center"
           animation={`${scrollAnimation} 30s linear infinite`}
         >
           {/* Duplicate the logos for seamless scrolling */}
           <Flex flexShrink={0} alignItems="center" gap="40px">
-            <Image src="/assets/companies/aci.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
-            <Image src="/assets/companies/aice.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
-            <Image src="/assets/companies/artline.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
-            <Image src="/assets/companies/bank-nussuma.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
-            <Image src="/assets/companies/mmi.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
-            <Image src="/assets/companies/pondok-digital.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
-            <Image src="/assets/companies/zerone.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/aci.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/aice.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/artline.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/bank-nussuma.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/mmi.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/pondok-digital.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/zerone.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
           </Flex>
           <Flex flexShrink={0} alignItems="center" gap="40px" ml="40px">
-            <Image src="/assets/companies/aci.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
-            <Image src="/assets/companies/aice.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
-            <Image src="/assets/companies/artline.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
-            <Image src="/assets/companies/bank-nussuma.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
-            <Image src="/assets/companies/mmi.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
-            <Image src="/assets/companies/pondok-digital.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
-            <Image src="/assets/companies/zerone.png" height="60px" filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/aci.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/aice.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/artline.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/bank-nussuma.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/mmi.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/pondok-digital.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
+            <Image src="/assets/companies/zerone.png" height={{ base: "30px", md: "60px" }} filter="grayscale(100%)" _hover={{ filter: 'grayscale(0%)' }} mr={4} />
           </Flex>
         </Flex>
       </Box>
