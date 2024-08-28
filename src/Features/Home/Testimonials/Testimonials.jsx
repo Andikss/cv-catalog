@@ -137,8 +137,8 @@ export const Testimonials = () => {
           <Text fontWeight="bold" fontSize={{ base: "xs", md: "x-large" }}>
             Cek Review Testimoni di Instagram Kami
           </Text>
-          <Link href="https://instagram.com/jasadesincv.top" fontSize={{ base: "xs", md: "md" }} isExternal>
-            <i>@jasadesincv.top</i>
+          <Link href="https://instagram.com/jasadesaincv.top" fontSize={{ base: "xs", md: "md" }} isExternal>
+            <i>@jasadesaincv.top</i>
           </Link>
         </Box>
       </Box>
