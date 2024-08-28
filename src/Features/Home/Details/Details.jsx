@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardBody, Flex, Grid, Link, Text } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, Flex, Grid, Image, Link, Text } from "@chakra-ui/react";
 import { FaClockRotateLeft, FaWhatsapp } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { Detail } from "@/Components";
@@ -12,7 +12,8 @@ export const Details = () => {
   return (
     <MotionFlex
       direction={{ base: 'column', md: 'row' }}
-      alignItems="stretch"
+      alignItems="center"
+      // alignItems="stretch"
       justifyContent="center"
       width="100%"
       maxW="container.xl"
@@ -23,7 +24,7 @@ export const Details = () => {
       animate={{ opacity: 1, y: 0 }}  
       transition={{ duration: 0.5, ease: "easeOut" }} 
     >
-      <Card
+      {/* <Card
         flex={1}
         minH="inherit"
         background="gray.400"
@@ -70,7 +71,14 @@ export const Details = () => {
             Hubungi Kami
           </Button>
         </CardBody>
-      </Card>
+      </Card> */}
+
+      <Image
+        src="assets/content.png"
+        maxH="400px"
+        flex={1}
+        objectFit="contain"
+      />
 
       <MotionGrid
         flex={2}
