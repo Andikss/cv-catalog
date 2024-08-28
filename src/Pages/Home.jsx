@@ -1,10 +1,10 @@
 import { Box, Card, CardBody, Image, Stack } from '@chakra-ui/react';
 import { Stats, Catalog, Details, Portfolio, Companies, Testimonials } from '@/Features/Home';
-import { Topbar, Footer, Whatsapp } from '@/Components';
+import { Topbar, Footer, Whatsapp, GoToTop } from '@/Components';
 
 const Home = () => {
   return (
-    <Box position="relative">
+    <Box id='base' position="relative">
       <Topbar />
 
       <Box width="100%" height="auto">
@@ -36,6 +36,7 @@ const Home = () => {
       </Box>
 
       {/* Floating Button */}
+      <GoToTop />
       <Whatsapp />
     </Box>
   );
