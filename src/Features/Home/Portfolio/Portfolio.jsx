@@ -13,10 +13,11 @@ export const Portfolio = () => {
       <Box 
         position="relative" 
         width="100%" 
-        height={{ base: "520px", md: "320px" }}
+        minH={{ base: "320px", md: "320px" }}
         borderRadius="20px" 
         overflow="hidden" 
         mt={10}
+        mb={4}
       >
         {/* Title and description text */}
         <Box 
@@ -26,25 +27,25 @@ export const Portfolio = () => {
           backdropFilter="blur(5px)"
           height="100%"
           position="absolute" 
-          top="0px" 
-          left="0px" 
+          top="0" 
+          left="0" 
           zIndex="1" 
           color="white" 
-          p={6}
+          p={{ base: 4, md: 6 }}
         >
-          <Text fontSize="x-large" fontWeight="bold">
+          <Text fontSize={{ base: "lg", md: "x-large" }} fontWeight="bold">
             Daftar Pekerjaan
           </Text>
-          <Text fontSize="xxx-large" fontWeight="bold">
+          <Text fontSize={{ base: "xl", md: "xxx-large" }} fontWeight="bold">
             Dengan CV Professional
           </Text>
-          <Text fontSize="md" my={2}>
+          <Text fontSize={{ base: "sm", md: "md" }} my={2}>
             HRD akan melihat anda lebih baik jika anda memiliki CV professional yang mudah dibaca oleh sistem.
             Dengan bantuan kami, anda akan mendapatkan kesempatan tersebut.
-            Gunakan portal <Link filter="brightness(1.3)" href='https://toploker.com'>Toploker.com</Link> untuk membantu anda mendapatkan pekerjaan impian anda.
+            Gunakan portal <Link filter="brightness(1.3)" href='https://toploker.com' isExternal>Toploker.com</Link> untuk membantu anda mendapatkan pekerjaan impian anda.
           </Text>
 
-          <Link fontWeight="bold">
+          <Link fontWeight="bold" href='https://toploker.com' isExternal>
             Kunjungi Toploker.com
           </Link>
         </Box>
@@ -53,7 +54,7 @@ export const Portfolio = () => {
           src='assets/banner-1.webp' 
           objectFit="cover" 
           width="100%" 
-          height="100%" 
+          height="100%"
         />
         <Box 
           position="absolute" 
