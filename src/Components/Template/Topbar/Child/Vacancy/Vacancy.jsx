@@ -5,7 +5,7 @@ import { CollapseItem } from '@/Components';
 import { BiStar } from 'react-icons/bi';
 import PropTypes from 'prop-types'
 
-export const Catalog = ({ scroll }) => {
+export const Vacancy = ({ scroll }) => {
   const catalogItems = [
     { href: 'packet-1', label: 'Surat Lamaran', icon: <MdMail /> },
     { href: 'packet-2', label: 'CV ATS', icon: <MdFilePresent /> },
@@ -24,6 +24,6 @@ export const Catalog = ({ scroll }) => {
   );
 };
 
-Catalog.propTypes = {
+Vacancy.propTypes = {
   scroll: PropTypes.func.isRequired
 }

@@ -1,5 +1,5 @@
 import { Flex } from '@chakra-ui/react';
-import { Catalog, Company, Developer, Logo } from './Child';
+import { Catalog, Company, Developer, Logo, Vacancy } from './Child';
 
 export const Topbar = () => {
   const handleSmoothScroll = (event, targetId) => {
@@ -21,6 +21,7 @@ export const Topbar = () => {
         <Logo/>
         <Flex direction="row" alignItems="center" gap={5}>
           <Catalog scroll={handleSmoothScroll}/>
+          <Vacancy scroll={handleSmoothScroll}/>
           <Company scroll={handleSmoothScroll}/>
           <Developer/>
         </Flex>
