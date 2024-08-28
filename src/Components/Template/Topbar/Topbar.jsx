@@ -33,7 +33,7 @@ export const Topbar = () => {
       color="#344767"
       py={2}
       pl={2}
-      pr={4}
+      pr={{ base: 2, md: 6 }}
       boxShadow="md"
       zIndex="1000"
       borderBottomRadius="30px"
