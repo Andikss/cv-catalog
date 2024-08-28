@@ -2,6 +2,24 @@ import { Box, Grid, Image, Spinner, Stack, Text, useDisclosure } from "@chakra-u
 import { CatalogTitle, ImageViewer } from "@/Components";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
+import axios from "axios";
+
+// Retry function
+const fetchWithRetry = async (url, retries = 3, delay = 1000) => {
+  for (let attempt = 0; attempt < retries; attempt++) {
+    try {
+      const response = await axios.get(url);
+      return response.data;
+    } catch (error) {
+      if (attempt < retries - 1) {
+        console.warn(`Attempt ${attempt + 1} failed. Retrying in ${delay}ms...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      } else {
+        throw error;
+      }
+    }
+  }
+};
 
 export const Catalog = () => {
   const [data, setData] = useState([]);
@@ -12,12 +30,11 @@ export const Catalog = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(import.meta.env.VITE_API_URL);
-        const result = await response.json();
+        const result = await fetchWithRetry(import.meta.env.VITE_API_URL);
         setData(result.data || []);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setData([]); // Fallback to empty array
+        setData([]);
       }
     };
 
