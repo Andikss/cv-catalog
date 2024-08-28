@@ -109,7 +109,7 @@ export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
           />
           <Tooltip hasArrow label="Unduh Konten">
             <IconButton
-              colorScheme="teal"
+              colorScheme="orange"
               aria-label="Download"
               icon={<FaDownload />}
               position="absolute"

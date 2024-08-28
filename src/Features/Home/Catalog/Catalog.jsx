@@ -39,7 +39,7 @@ export const Catalog = () => {
   };
 
   if (!data.length) {
-    return <Spinner colorScheme="teal" size="md" />;
+    return <Spinner colorScheme="orange" size="md" />;
   }
 
   return (

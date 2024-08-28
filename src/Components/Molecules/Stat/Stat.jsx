@@ -25,7 +25,7 @@ export const Stat = ({ total, title, description }) => {
 
   return (
     <Center flexDirection="column">
-      <Text color="teal" fontSize="xxx-large" fontWeight="600" mb={2}>
+      <Text color="#344767" fontSize="xxx-large" fontWeight="600" mb={2}>
         {count}+
       </Text>
       <Text fontWeight="550" fontSize="large">

@@ -8,9 +8,9 @@ export const Detail = ({ title, description, icon: Icon }) => {
       width="100%"
       borderRadius="md"
       transition="background-color 0.3s"
-      _hover={{ backgroundColor: 'teal.100' }} 
+      _hover={{ backgroundColor: 'blue.100' }} 
     >
-      {Icon && <Icon fontSize="x-large" color='teal' />}
+      {Icon && <Icon fontSize="x-large" color='#344767' />}
       <Text fontWeight="bold" mt={4} mb={2}>
         {title}
       </Text>

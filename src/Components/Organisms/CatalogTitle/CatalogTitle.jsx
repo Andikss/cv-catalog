@@ -6,7 +6,7 @@ export const CatalogTitle = ({ label, title, description }) => {
     <Box width="container.full" display="flex" flexDirection="column" alignItems="center">
       {label && (
         <Box mb={3}>
-          <Badge colorScheme='teal' px={4} py={1} borderRadius="50px">
+          <Badge colorScheme='orange' px={4} py={1} borderRadius="50px">
             {label}
           </Badge>
         </Box>
