@@ -112,6 +112,7 @@ export const Catalog = () => {
                     boxShadow: 'lg'
                   }}
                   onClick={() => handleImageClick(packet.cv, index)}
+                  cursor="pointer"
                 >
                   <Box
                     width="100%"

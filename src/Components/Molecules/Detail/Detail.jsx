@@ -9,6 +9,7 @@ export const Detail = ({ title, description, icon: Icon }) => {
       borderRadius="md"
       transition="background-color 0.3s"
       _hover={{ backgroundColor: '#4b8bfa', color: 'white' }} 
+      cursor="pointer"
     >
       {Icon && <Icon fontSize="x-large" />}
       <Text fontWeight="bold" mt={4} mb={2}>
