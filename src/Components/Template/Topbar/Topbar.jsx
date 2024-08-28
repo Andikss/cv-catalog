@@ -1,5 +1,5 @@
 import { Flex, IconButton, Box, Collapse, useDisclosure } from '@chakra-ui/react';
-import { Catalog, Company, Developer, Logo, Vacancy } from './Child';
+import { Catalog, Company, Developer, Logo, Vacancy, Testimonial } from './Child';
 import { CgClose } from 'react-icons/cg';
 import { MdList } from 'react-icons/md';
 
@@ -11,8 +11,6 @@ export const Topbar = () => {
     event.stopPropagation();
   
     const targetElement = document.getElementById(targetId);
-    console.log(targetId);
-    console.log(targetElement);
   
     if (targetElement) {
       window.scrollTo({
@@ -63,6 +61,7 @@ export const Topbar = () => {
           <Catalog scroll={handleSmoothScroll} />
           <Vacancy scroll={handleSmoothScroll} />
           <Company scroll={handleSmoothScroll} />
+          <Testimonial scroll={handleSmoothScroll} />
           <Developer />
         </Flex>
       </Flex>
@@ -81,6 +80,7 @@ export const Topbar = () => {
           <Catalog scroll={handleSmoothScroll} />
           <Vacancy scroll={handleSmoothScroll} />
           <Company scroll={handleSmoothScroll} />
+          <Testimonial scroll={handleSmoothScroll} />
           <Developer />
         </Box>
       </Collapse>

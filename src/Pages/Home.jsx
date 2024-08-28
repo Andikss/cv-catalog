@@ -1,5 +1,5 @@
 import { Box, Card, CardBody, Image, Stack } from '@chakra-ui/react';
-import { Stats, Catalog, Details, Portfolio, Companies } from '@/Features/Home';
+import { Stats, Catalog, Details, Portfolio, Companies, Testimonials } from '@/Features/Home';
 import { Topbar, Footer, Whatsapp } from '@/Components';
 
 const Home = () => {
@@ -24,8 +24,9 @@ const Home = () => {
                 <Stats/>
                 <Details/>
                 <Catalog/>
-                <Portfolio/>
                 <Companies/>
+                <Portfolio/>
+                <Testimonials/>
               </Stack>
             </CardBody>
           </Card>
