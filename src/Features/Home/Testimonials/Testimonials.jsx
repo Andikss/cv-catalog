@@ -127,7 +127,7 @@ export const Testimonials = () => {
   
         <Box
           position="absolute"
-          bottom={{ base: "30px", md: "60px" }}
+          bottom={{ base: "30px", md: "30px" }}
           right="0" 
           zIndex={3}
           textAlign="center"
