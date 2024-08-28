@@ -107,7 +107,7 @@ export const Catalog = () => {
                     <Image
                       src={`https://ads.andikads.my.id${item.url}`}
                       alt={`Image ${item.id}`}
-                      maxH="400px"
+                      maxH={{ base: "auto", md: "400px" }}
                       flex={1}
                       objectFit="contain"
                       borderRadius="md"
