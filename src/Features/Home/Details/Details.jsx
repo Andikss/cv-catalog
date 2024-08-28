@@ -94,7 +94,7 @@ export const Details = () => {
         <Detail
           icon={MdDiscount}
           title="Harga Terjangkau"
-          description="Khawatir kami akan menguras isi dompetmu? tenang saja.. kami tahu persis bahwa kamu adalah seorang pencari kerja, hanya mulai dari Rp.xxxxxxx saja kami akan tetap memberikan CV terbaik untuk kamu."
+          description="Khawatir kami akan menguras isi dompetmu? tenang saja.. kami tahu persis bahwa kamu adalah seorang pencari kerja, hanya mulai dari Rp.30000 saja kami akan tetap memberikan CV terbaik untuk kamu."
         />
         <Detail
           icon={GiPortal}
