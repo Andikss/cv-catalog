@@ -1,11 +1,11 @@
 import { Box, Card, CardBody, Image, Stack } from '@chakra-ui/react';
 import { Stats, Catalog, Details, Portfolio, Companies } from '@/Features/Home';
-import { Topbar, Footer } from '@/Components';
+import { Topbar, Footer, Whatsapp } from '@/Components';
 
 const Home = () => {
   return (
     <Box position="relative">
-      <Topbar /> 
+      <Topbar />
 
       <Box width="100%" height="auto">
         <Image src="assets/banner.jpg" width="100%" height="440px" />
@@ -33,6 +33,9 @@ const Home = () => {
           <Footer/>
         </Box>
       </Box>
+
+      {/* Floating Button */}
+      <Whatsapp />
     </Box>
   );
 };
