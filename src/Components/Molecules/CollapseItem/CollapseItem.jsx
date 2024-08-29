@@ -17,6 +17,8 @@ export const CollapseItem = ({ icon, label, items, scroll }) => {
             alignItems="center"
             gap={1}
             href={`#${label.toLowerCase()}`}
+            textDecoration="none" // Remove underline from Link
+            _hover={{ textDecoration: 'none' }} // Ensure no underline on hover
           >
             {icon} {label}
           </Link>
@@ -35,7 +37,7 @@ export const CollapseItem = ({ icon, label, items, scroll }) => {
         <PopoverArrow />
         {items.map((item, index) => (
           item.divider ? (
-            <Divider borderColor="black" key={index} />
+            <Divider borderColor="gray.500" key={index} my={1} />
           ) : (
             <Button
               key={index}
@@ -54,7 +56,9 @@ export const CollapseItem = ({ icon, label, items, scroll }) => {
                   scroll(e, item.href);
                 }
               }}
-              px={4} 
+              px={4}
+              _hover={{ background: 'gray.100', textDecoration: 'none' }} 
+              _focus={{ boxShadow: 'none' }}
             >
               {item.label}
             </Button>
