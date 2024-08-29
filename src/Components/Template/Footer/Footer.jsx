@@ -59,7 +59,7 @@ export const Footer = () => {
           <Popover placement="bottom-start" trigger="hover">
             <PopoverTrigger>
               <Link _hover={{ textDecoration: 'none' }}>
-                <Text>Contact Developer</Text>
+                <Text _hover={{ textDecoration: 'underline' }}>Contact Developer</Text>
               </Link>
             </PopoverTrigger>
             <PopoverContent width="fit-content" p={4}>
@@ -69,7 +69,7 @@ export const Footer = () => {
                 <Flex direction="column" align="start" gap={3}>
                   <Flex width="100%" justifyContent="center">
                     <Image
-                      src="https://github.com/Andikss.png"
+                      src="https://avatars.githubusercontent.com/Andikss"
                       alt="Andika Dwi Saputra"
                       borderRadius="full"
                       boxSize="80px"
