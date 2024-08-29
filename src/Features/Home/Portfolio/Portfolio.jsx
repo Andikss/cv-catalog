@@ -1,9 +1,10 @@
 import { CatalogTitle } from '@/Components';
-import { Box, Image, Link, Text } from '@chakra-ui/react';
+import { Box, Button, Image, Link, Text } from '@chakra-ui/react';
+import { BiCart } from 'react-icons/bi';
 
 export const Portfolio = () => {
   return (
-    <Box width="100%" height="auto" px={{ base: 2, md: '80px' }}>
+    <Box width="100%" height="auto" display="flex" flexDirection="column" alignItems="center" px={{ base: 2, md: '80px' }}>
       <CatalogTitle
         label="Tingkatkan Kesempatan"
         title="Dengan CV Buatan Kami"
@@ -77,6 +78,25 @@ export const Portfolio = () => {
             borderRadius: "20px",
           }}
         />
+      </Box>
+
+      <Box mt={7}>
+        <Button 
+          as={Link} 
+          target='_blank'
+          href='https://docs.google.com/forms/d/e/1FAIpQLScK5VYehXbAwkSshei6JeA_vXh_tHB771ZxjCX8zpe7aTu3dA/viewform' 
+          width="300px" 
+          background="#4b8bfa" 
+          color="white" 
+          _hover={{ 
+            background: 'blue.600', 
+            textDecoration: 'none', 
+            transform: 'translateY(-2px)' // Moves the button up slightly
+          }} 
+          leftIcon={<BiCart style={{ transition: 'transform 0.3s' }} />} // Smooth transition for the icon
+        >
+          Buat CV
+        </Button>
       </Box>
     </Box>
   );
