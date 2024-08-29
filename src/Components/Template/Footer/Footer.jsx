@@ -69,7 +69,7 @@ export const Footer = () => {
                 <Flex direction="column" align="start" gap={3}>
                   <Flex width="100%" justifyContent="center">
                     <Image
-                      src="https://github.com/Andikss.png" // Replace with the actual GitHub avatar URL
+                      src="https://github.com/Andikss.png"
                       alt="Andika Dwi Saputra"
                       borderRadius="full"
                       boxSize="80px"
@@ -102,8 +102,8 @@ export const Footer = () => {
       </Flex>
     
       <Box position="absolute" bottom="12px" left="12px" display="flex" gap={3}>
-        <Image src='assets/favicon.png' height="40px" mb={2} mixBlendMode="multiply"/>
-        <Image src='assets/logo.png' height="40px" mb={3} mixBlendMode="multiply"/>
+        <Image src='assets/logo/favicon.webp' height="40px" mb={2} mixBlendMode="multiply"/>
+        <Image src='assets/logo/logo.webp' height="40px" mb={3} mixBlendMode="multiply"/>
       </Box>
     </Box>
   );

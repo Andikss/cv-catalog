@@ -15,7 +15,7 @@ export const Popup = () => {
         <ModalCloseButton zIndex={999} />
         <ModalBody p={0} display="flex" justifyContent="center" alignItems="center">
           <Image
-            src="assets/pricelist.png"
+            src="assets/content/pricelist.webp"
             alt="Promo"
             borderRadius="md"
             objectFit="cover"

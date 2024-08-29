@@ -118,7 +118,7 @@ export const Testimonials = () => {
         width="100%"
       >
         <Image
-          src='assets/review.png'
+          src='assets/content/review.webp'
           alt='Review'
           zIndex={1}
           width="full"

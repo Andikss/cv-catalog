@@ -76,7 +76,7 @@ export const Details = () => {
         animate="float"
       >
         <Image
-          src="assets/content.png"
+          src="assets/content/content.webp"
           maxH="500px"
           flex={1}
           objectFit="contain"

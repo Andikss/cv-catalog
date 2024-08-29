@@ -9,7 +9,7 @@ const Home = () => {
 
       <Box width="100%" height="auto" position="relative">
         <Image 
-          src="assets/banner.png" 
+          src="assets/content/banner.webp" 
           width="100%" 
           height="440px" 
           objectFit="cover" 
