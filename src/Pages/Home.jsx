@@ -7,10 +7,16 @@ const Home = () => {
     <Box id='base' position="relative">
       <Topbar />
 
-      <Box width="100%" height="auto">
-        <Image src="assets/banner.jpg" width="100%" height="440px" />
+      <Box width="100%" height="auto" position="relative">
+        <Image 
+          src="assets/banner.png" 
+          width="100%" 
+          height="440px" 
+          objectFit="cover" 
+          objectPosition="right center" 
+        />
 
-        <Box p={{ base: 2, sm: 2, md: 6, xl: 6 }}>
+        <Box p={{ base: 2, sm: 2, md: 6, xl: 6 }} position="relative" zIndex={1}>
           <Card
             pb="100px"
             boxShadow="0 10px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05)"
