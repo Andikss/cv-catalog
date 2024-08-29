@@ -4,10 +4,10 @@ import { Topbar, Footer, Whatsapp, GoToTop } from '@/Components';
 
 const Home = () => {
   return (
-    <Box id='base' position="relative" overflowX="hidden">
+    <Box id='base' position="relative">
       <Topbar />
 
-      <Box width="100dvw" height="auto" position="relative">
+      <Box width="100%" height="auto" position="relative">
         <Image 
           src="assets/content/banner.webp" 
           width="100%" 
