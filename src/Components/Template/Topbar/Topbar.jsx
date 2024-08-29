@@ -1,5 +1,5 @@
 import { Flex, IconButton, Box, Collapse, useDisclosure } from '@chakra-ui/react';
-import { Catalog, Company, Developer, Logo, Vacancy, Testimonial } from './Child';
+import { Catalog, Company, Logo, Vacancy, Testimonial } from './Child';
 import { CgClose } from 'react-icons/cg';
 import { MdList } from 'react-icons/md';
 
@@ -62,7 +62,6 @@ export const Topbar = () => {
           <Vacancy scroll={handleSmoothScroll} />
           <Company scroll={handleSmoothScroll} />
           <Testimonial scroll={handleSmoothScroll} />
-          {/* <Developer /> */}
         </Flex>
       </Flex>
 
@@ -81,7 +80,6 @@ export const Topbar = () => {
           <Vacancy scroll={handleSmoothScroll} />
           <Company scroll={handleSmoothScroll} />
           <Testimonial scroll={handleSmoothScroll} />
-          {/* <Developer /> */}
         </Box>
       </Collapse>
     </Flex>
