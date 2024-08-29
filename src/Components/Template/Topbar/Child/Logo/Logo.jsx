@@ -1,25 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Heading, Image, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverBody, Text, ListItem, Button, Flex, List, Divider } from '@chakra-ui/react';
-import { CgChevronLeft, CgClose } from 'react-icons/cg';
+import { CgChevronLeft } from 'react-icons/cg';
 import { BiCart } from 'react-icons/bi';
+import { usePopup } from '@/Context/Home'; 
 
-export const Logo = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export const Logo = () => { 
+  const { isPopoverOpen, openPopover, closePopover } = usePopup();
   const [step, setStep] = useState(1);
 
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
+  useEffect(() => {
+    if (!isPopoverOpen) {
+      const timer = setTimeout(() => {
+        openPopover();
+      }, 1000);
 
-  const handleClose = () => {
-    setIsOpen(false);
+      return () => clearTimeout(timer);
+    }
+  }, [isPopoverOpen, openPopover]);
+
+  const handleToggle = () => {
+    if (isPopoverOpen) {
+      closePopover();
+    } else {
+      openPopover();
+    }
   };
 
   const handleNext = () => {
     if (step < 2) {
       setStep(step + 1);
     } else {
-      handleClose();
+      closePopover();
     }
   };
 
@@ -31,9 +42,14 @@ export const Logo = () => {
 
   return (
     <Box display="flex" flexDirection="row" alignItems="center" gap={2}>
-      <Popover isOpen={isOpen} onClose={handleClose} placement="bottom-start">
+      <Popover isOpen={isPopoverOpen} onClose={closePopover} placement="bottom-start">
         <PopoverTrigger>
-          <Image src='assets/logo/favicon.webp' height="40px" onClick={handleToggle} cursor="pointer" />
+          <Image 
+            src='assets/logo/favicon.webp' 
+            height="40px" 
+            onClick={handleToggle} 
+            cursor="pointer"
+          />
         </PopoverTrigger>
         <PopoverContent shadow="lg" padding={3} borderRadius="30px">
           <PopoverArrow />

@@ -1,15 +1,11 @@
-import { useEffect } from 'react';
-import { Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, useDisclosure, Image } from '@chakra-ui/react';
+import { Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, Image } from '@chakra-ui/react';
+import { usePopup } from '@/Context/Home';
 
 export const Popup = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  useEffect(() => {
-    onOpen();
-  }, [onOpen]);
+  const { isPopupOpen, closePopup } = usePopup();
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="md" isCentered>
+    <Modal isOpen={isPopupOpen} onClose={closePopup} size="md" isCentered>
       <ModalOverlay />
       <ModalContent borderRadius="md" p={0}>
         <ModalCloseButton zIndex={999} />
