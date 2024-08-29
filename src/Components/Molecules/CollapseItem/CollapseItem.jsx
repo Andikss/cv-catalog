@@ -1,12 +1,17 @@
-import { Box, Button, Divider, Link, Popover, PopoverTrigger, PopoverContent, PopoverArrow, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Button, Divider, Link, Popover, PopoverTrigger, PopoverContent, PopoverArrow, useDisclosure, useBreakpointValue } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
+import { CgChevronDown, CgChevronUp } from 'react-icons/cg';
 
 export const CollapseItem = ({ icon, label, items, scroll }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
     <Popover
       isLazy
+      isOpen={isOpen}
+      onOpen={onOpen}
+      onClose={onClose}
       trigger={isMobile ? 'click' : 'hover'}
       placement="bottom-end"
     >
@@ -17,10 +22,10 @@ export const CollapseItem = ({ icon, label, items, scroll }) => {
             alignItems="center"
             gap={1}
             href={`#${label.toLowerCase()}`}
-            textDecoration="none" // Remove underline from Link
-            _hover={{ textDecoration: 'none' }} // Ensure no underline on hover
+            textDecoration="none" 
+            _hover={{ textDecoration: 'none' }}
           >
-            {icon} {label}
+            {icon} {label} {isOpen ? <CgChevronUp /> : <CgChevronDown />}
           </Link>
         </Box>
       </PopoverTrigger>
