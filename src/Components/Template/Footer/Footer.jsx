@@ -50,15 +50,13 @@ export const Footer = () => {
             />
           </Flex>
   
-          <FooterItem
-            label="Ikuti kami di sosial media"
-          />
+          <Text>Ikuti kami di sosial media</Text>
         </Box>
         <Box height={{ base: "auto", md: "200px" }} mb="40px" width={{ base: "100%", md: "25%" }} display="flex" flexDirection="column" gap={2}>
           <FooterItem label="Developer"/>
 
           {/* GitHub Popover */}
-          <Popover placement="bottom-start">
+          <Popover placement="bottom-start" trigger="hover">
             <PopoverTrigger>
               <Link _hover={{ textDecoration: 'none' }}>
                 <Text>Contact Developer</Text>
