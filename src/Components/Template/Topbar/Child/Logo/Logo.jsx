@@ -9,14 +9,17 @@ export const Logo = () => {
   const [step, setStep] = useState(1);
 
   useEffect(() => {
-    if (!isPopoverOpen) {
+    const hasShownPopover = localStorage.getItem('hasShownPopover');
+
+    if (!hasShownPopover) {
       const timer = setTimeout(() => {
         openPopover();
+        localStorage.setItem('hasShownPopover', 'true'); 
       }, 1000);
 
       return () => clearTimeout(timer);
     }
-  }, [isPopoverOpen, openPopover]);
+  }, [openPopover]);
 
   const handleToggle = () => {
     if (isPopoverOpen) {

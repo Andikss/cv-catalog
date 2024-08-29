@@ -1,9 +1,14 @@
-import { Box, Card, CardBody, Image, Stack } from '@chakra-ui/react';
+import { Box, Card, CardBody, Image, Stack, useBreakpointValue } from '@chakra-ui/react';
 import { Stats, Catalog, Details, Portfolio, Companies, Testimonials, Popup } from '@/Features/Home';
 import { Topbar, Footer, Whatsapp, GoToTop } from '@/Components';
 import { PopupProvider } from '@/Context/Home';
 
 const Home = () => {
+  const bannerImage = useBreakpointValue({
+    base: "assets/content/banner-mobile.png",
+    md: "assets/content/banner.webp",
+  });
+
   return (
     <PopupProvider>
       <Box id='base' position="relative">
@@ -11,11 +16,12 @@ const Home = () => {
 
         <Box width="100%" height="auto" position="relative">
           <Image 
-            src="assets/content/banner.webp" 
+            src={bannerImage}
             width="100%" 
             height="440px" 
             objectFit="cover" 
-            objectPosition="right center" 
+            objectPosition="center" 
+            alt="Banner"
           />
 
           <Box p={{ base: 2, sm: 2, md: 6, xl: 6 }} position="relative" zIndex={1}>
