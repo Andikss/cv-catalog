@@ -5,7 +5,7 @@ import { PopupProvider } from '@/Context/Home';
 
 const Home = () => {
   const bannerImage = useBreakpointValue({
-    base: "assets/content/banner-mobile.png",
+    base: "assets/content/banner-mobile.webp",
     md: "assets/content/banner.webp",
   });
 

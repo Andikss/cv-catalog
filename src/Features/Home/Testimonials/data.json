@@ -1,33 +1,32 @@
 [
-    {
+  {
+    "name": "Meylinda Safarina",
+    "avatar": "assets/avatar/meylinda.webp",
+    "review": "Layanan pembuatan surat lamaran kerja yang luar biasa. Setiap detail ditangani dengan cermat dan profesional.",
+    "rating": 5
+  },
+  {
+    "name": "Ramadhan",
+    "avatar": "assets/avatar/ramadhan.webp",
+    "review": "Pelayanan sangat baik ,adminnya ramah😁 ,hasil kerjaaannya juga sangat memuaskan🤩🤩",
+    "rating": 5
+  },
+  {
+    "name": "Syarif Hidayatullah",
+    "avatar": "assets/avatar/syarif.webp",
+    "review": "9/10☺️",
+    "rating": 5
+  },
+  {
+    "name": "Karlina",
+    "avatar": "assets/avatar/karlina.webp",
+    "review": "Kak bagus bangetttt ih masyaallah, sukakkkk bangettt aku makasiii yakk kak, bener² sesuai sama apa yg aku mau, terus kek bener2 semua kriteria yg aku sebutin itu masuk dengan ringkas, makasiii yakk kak aku suka bangett, makannya aku mau buat cv nya juga🙏",
+    "rating": 5
+  },{
       "name": "Fitri Apriliani Effendi",
       "avatar": "https://randomuser.me/api/portraits/women/31.jpg",
       "review": "Admin nya sangat fast respon juga sabar, Pengerjaan CV juga cepat selesai dan sesuai keinginan, Puas banget pake jasa nya walaupun ini pertama kalinya🤩",
       "rating": 5
-    },
-    {
-      "name": "Budi Pratama",
-      "avatar": "https://randomuser.me/api/portraits/men/33.jpg",
-      "review": "Layanan pembuatan CV mereka sangat efisien dan mudah digunakan. Hasilnya sangat memuaskan dan mendukung pencarian kerja saya.",
-      "rating": 4
-    },
-    {
-      "name": "Dewi Ayu",
-      "avatar": "https://randomuser.me/api/portraits/women/34.jpg",
-      "review": "Pengalaman saya dengan layanan ini sangat positif. CV yang mereka buat membantu saya mendapatkan wawancara kerja yang diinginkan.",
-      "rating": 5
-    },
-    {
-      "name": "Joko Widodo",
-      "avatar": "https://randomuser.me/api/portraits/men/35.jpg",
-      "review": "Layanan pembuatan surat lamaran kerja yang luar biasa. Setiap detail ditangani dengan cermat dan profesional.",
-      "rating": 5
-    },
-    {
-      "name": "Putri Amelia",
-      "avatar": "https://randomuser.me/api/portraits/women/36.jpg",
-      "review": "Sangat puas dengan hasil CV dan surat lamaran saya. Prosesnya cepat dan mudah dengan kualitas yang sangat baik.",
-      "rating": 4
     },
     {
       "name": "Rizal Hadi",
