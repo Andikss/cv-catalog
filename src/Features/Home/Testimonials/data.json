@@ -22,45 +22,40 @@
     "avatar": "assets/avatar/karlina.webp",
     "review": "Kak bagus bangetttt ih masyaallah, sukakkkk bangettt aku makasiii yakk kak, bener² sesuai sama apa yg aku mau, terus kek bener2 semua kriteria yg aku sebutin itu masuk dengan ringkas, makasiii yakk kak aku suka bangett, makannya aku mau buat cv nya juga🙏",
     "rating": 5
-  },{
+  },
+  {
       "name": "Fitri Apriliani Effendi",
-      "avatar": "https://randomuser.me/api/portraits/women/31.jpg",
+      "avatar": "https://i.pinimg.com/736x/ae/c6/0f/aec60f0ae71eaee4d1928861e3164c33.jpg",
       "review": "Admin nya sangat fast respon juga sabar, Pengerjaan CV juga cepat selesai dan sesuai keinginan, Puas banget pake jasa nya walaupun ini pertama kalinya🤩",
       "rating": 5
     },
     {
       "name": "Rizal Hadi",
-      "avatar": "https://randomuser.me/api/portraits/men/37.jpg",
+      "avatar": "https://i.pinimg.com/236x/14/1f/50/141f509337f5e04b9a1c3e544d393cdb.jpg",
       "review": "Layanan ini memberikan CV yang sangat profesional dan efektif. Saya mendapatkan tanggapan positif dari beberapa perusahaan setelah menggunakannya.",
       "rating": 5
     },
     {
       "name": "Rina Kartika",
-      "avatar": "https://randomuser.me/api/portraits/women/38.jpg",
+      "avatar": "https://i.pinimg.com/736x/fa/c6/0c/fac60cd64e64c4fec0bd07c20f9e94f7.jpg",
       "review": "Surat lamaran yang saya terima sangat membantu dalam melamar pekerjaan. Layanan ini sangat direkomendasikan.",
       "rating": 5
     },
     {
       "name": "Eko Budi",
-      "avatar": "https://randomuser.me/api/portraits/men/39.jpg",
+      "avatar": "https://i.pinimg.com/236x/13/f1/45/13f14515bcf860d3509432f49a25c365.jpg",
       "review": "Layanan pembuatan CV yang sangat baik dan mudah digunakan. CV saya terlihat sangat profesional dan menarik.",
       "rating": 4
     },
     {
       "name": "Nina Farah",
-      "avatar": "https://randomuser.me/api/portraits/women/40.jpg",
+      "avatar": "https://i.pinimg.com/236x/7f/e5/a9/7fe5a916e3e2b675481ee35394282706.jpg",
       "review": "Kualitas surat lamaran yang disediakan sangat bagus. Saya merasa lebih percaya diri untuk melamar pekerjaan setelah menggunakannya.",
       "rating": 5
     },
     {
-      "name": "Agus Setiawan",
-      "avatar": "https://randomuser.me/api/portraits/men/41.jpg",
-      "review": "Pengalaman yang sangat memuaskan dengan layanan ini. CV dan surat lamaran saya mendapatkan perhatian dari banyak perusahaan.",
-      "rating": 4
-    },
-    {
       "name": "Maya Sari",
-      "avatar": "https://randomuser.me/api/portraits/women/42.jpg",
+      "avatar": "https://i.pinimg.com/236x/ba/c9/9a/bac99a596ae5ec851c9bcc48acd761aa.jpg",
       "review": "Layanan yang sangat baik dan cepat dalam membuat CV dan surat lamaran. Prosesnya sangat mudah dan hasilnya memuaskan.",
       "rating": 5
     },
@@ -72,21 +67,9 @@
     },
     {
       "name": "Tina Rahma",
-      "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+      "avatar": "https://i.pinimg.com/236x/42/7b/3d/427b3d596090971adef0866a2618884a.jpg",
       "review": "Sangat puas dengan layanan ini. CV dan surat lamaran saya dibuat dengan baik dan membantu saya mendapatkan wawancara kerja.",
       "rating": 4
-    },
-    {
-      "name": "Arief Nugroho",
-      "avatar": "https://randomuser.me/api/portraits/men/45.jpg",
-      "review": "Layanan ini sangat memudahkan saya dalam membuat CV dan surat lamaran kerja. Hasilnya sangat profesional dan berkelas.",
-      "rating": 5
-    },
-    {
-      "name": "Rika Puspita",
-      "avatar": "https://randomuser.me/api/portraits/women/50.jpg",
-      "review": "CV dan surat lamaran yang dibuat sangat membantu dalam mendapatkan pekerjaan yang diinginkan. Sangat merekomendasikan layanan ini.",
-      "rating": 5
     }
   ]
   
