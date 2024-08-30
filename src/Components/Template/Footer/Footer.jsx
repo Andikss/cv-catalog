@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import { Box, Flex, Image, Link, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverHeader, PopoverBody, Text } from '@chakra-ui/react';
 import { FooterItem, SocialMedia } from '@/Components';
 import { FaInstagram, FaTiktok, FaWhatsapp, FaYoutube, FaGithub } from 'react-icons/fa';
 
 export const Footer = () => {
+  const [developerImageLoaded, setDeveloperImageLoaded] = useState(true);
+  const [logoImageLoaded, setLogoImageLoaded] = useState(true);
+  const [faviconImageLoaded, setFaviconImageLoaded] = useState(true);
+
   return (
     <Box width="100%" height="auto" px={{ base: 2, md: '100px' }} pt="100px" pb="50px" position="relative">
       <Flex direction={{ base: 'column', md: 'row' }}>
@@ -68,12 +73,18 @@ export const Footer = () => {
               <PopoverBody>
                 <Flex direction="column" align="start" gap={3}>
                   <Flex width="100%" justifyContent="center">
-                    <Image
-                      src="https://avatars.githubusercontent.com/Andikss"
-                      alt="Andika Dwi Saputra"
-                      borderRadius="full"
-                      boxSize="80px"
-                    />
+                    {developerImageLoaded ? (
+                      <Image
+                        src="https://avatars.githubusercontent.com/Andikss"
+                        alt="Andika Dwi Saputra"
+                        borderRadius="full"
+                        boxSize="80px"
+                        onLoad={() => setDeveloperImageLoaded(true)}
+                        onError={() => setDeveloperImageLoaded(false)}
+                      />
+                    ) : (
+                      <Text>Image not available</Text>
+                    )}
                   </Flex>
                   <Link href="https://github.com/Andikss" isExternal>
                     <Flex align="center" gap={2}>
@@ -102,8 +113,30 @@ export const Footer = () => {
       </Flex>
     
       <Box position="absolute" bottom="12px" left="12px" display="flex" gap={3}>
-        <Image src='assets/logo/favicon.png' height="40px" mb={2} mixBlendMode="multiply"/>
-        <Image src='assets/logo/logo.webp' height="40px" mb={3} mixBlendMode="multiply"/>
+        {faviconImageLoaded ? (
+          <Image
+            src='assets/logo/favicon.png'
+            height="40px"
+            mb={2}
+            mixBlendMode="multiply"
+            onLoad={() => setFaviconImageLoaded(true)}
+            onError={() => setFaviconImageLoaded(false)}
+          />
+        ) : (
+          <Text>Favicon not available</Text>
+        )}
+        {logoImageLoaded ? (
+          <Image
+            src='assets/logo/logo.webp'
+            height="40px"
+            mb={3}
+            mixBlendMode="multiply"
+            onLoad={() => setLogoImageLoaded(true)}
+            onError={() => setLogoImageLoaded(false)}
+          />
+        ) : (
+          <Text>Logo not available</Text>
+        )}
       </Box>
     </Box>
   );
