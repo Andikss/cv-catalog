@@ -48,7 +48,7 @@ export const Logo = () => {
       <Popover isOpen={isPopoverOpen} onClose={closePopover} placement="bottom-start">
         <PopoverTrigger>
           <Image 
-            src='assets/logo/favicon.webp' 
+            src='assets/logo/favicon.png' 
             height="40px" 
             onClick={handleToggle} 
             cursor="pointer"

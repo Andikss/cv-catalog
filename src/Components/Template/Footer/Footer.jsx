@@ -102,7 +102,7 @@ export const Footer = () => {
       </Flex>
     
       <Box position="absolute" bottom="12px" left="12px" display="flex" gap={3}>
-        <Image src='assets/logo/favicon.webp' height="40px" mb={2} mixBlendMode="multiply"/>
+        <Image src='assets/logo/favicon.png' height="40px" mb={2} mixBlendMode="multiply"/>
         <Image src='assets/logo/logo.webp' height="40px" mb={3} mixBlendMode="multiply"/>
       </Box>
     </Box>
