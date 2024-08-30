@@ -60,8 +60,8 @@ export const Topbar = () => {
         >
           <Catalog scroll={handleSmoothScroll} />
           <Vacancy scroll={handleSmoothScroll} />
-          <Company scroll={handleSmoothScroll} />
           <Testimonial scroll={handleSmoothScroll} />
+          <Company scroll={handleSmoothScroll} />
           <CV/>
         </Flex>
       </Flex>
@@ -79,8 +79,8 @@ export const Topbar = () => {
         >
           <Catalog scroll={handleSmoothScroll} />
           <Vacancy scroll={handleSmoothScroll} />
-          <Company scroll={handleSmoothScroll} />
           <Testimonial scroll={handleSmoothScroll} />
+          <Company scroll={handleSmoothScroll} />
           <CV/>
         </Box>
       </Collapse>

@@ -37,9 +37,9 @@ const Home = () => {
                 <Stack justifyContent="center" alignItems="center" gap="100px" width="100%">
                   <Stats/>
                   <Details/>
+                  <Testimonials/>
                   <Catalog/>
                   <Portfolio/>
-                  <Testimonials/>
                   <Companies/>
                 </Stack>
               </CardBody>
