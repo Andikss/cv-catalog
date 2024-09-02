@@ -123,7 +123,7 @@ export const Catalog = () => {
                     transition="transform 0.3s ease"
                   >
                     <Image
-                      src={`https://ads.andikads.my.id${item.url}`}
+                      src={`${import.meta.env.VITE_API_BASE_URL}${item.url}`}
                       alt={`Image ${item.id}`}
                       maxH={{ base: "auto", md: "400px" }}
                       flex={1}

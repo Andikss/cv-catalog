@@ -24,7 +24,7 @@ export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
     const currentImage = images[currentIndex];
     const fileName = currentImage.url.split('/').pop();
 
-    fetch(`https://ads.andikads.my.id${currentImage.url}`)
+    fetch(`${import.meta.env.VITE_API_BASE_URL}${currentImage.url}`)
       .then((response) => response.blob())
       .then((blob) => {
         const blobUrl = URL.createObjectURL(blob);
@@ -61,7 +61,7 @@ export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hallo kakak, saya ingin membeli paket CV berikut: https://ads.andikads.my.id/${images[currentIndex]?.url}, apakah masih tersedia?`
+    `Hallo kakak, saya ingin membeli paket CV berikut: ${import.meta.env.VITE_API_BASE_URL}/${images[currentIndex]?.url}, apakah masih tersedia?`
   );
 
   const whatsappLink = `https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}?text=${whatsappMessage}`;
@@ -149,7 +149,7 @@ export const ImageViewer = ({ images, isOpen, onClose, initialIndex }) => {
           <Box display="flex" justifyContent="center" alignItems="center">
             {currentImage ? (
               <Image
-                src={`https://ads.andikads.my.id${currentImage.url}`}
+                src={`${import.meta.env.VITE_API_BASE_URL}${currentImage.url}`}
                 alt={`Image ${currentImage.id}`}
                 objectFit="contain"
                 maxW="90vw"
