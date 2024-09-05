@@ -7,6 +7,7 @@ export const CV = () => {
         as={Link}
         target="_blank"
         href='https://docs.google.com/forms/d/e/1FAIpQLScK5VYehXbAwkSshei6JeA_vXh_tHB771ZxjCX8zpe7aTu3dA/viewform' 
+        width="100%"
         borderRadius="50px" 
         leftIcon={<BiCart/>}
         background="#4b8bfa" 
