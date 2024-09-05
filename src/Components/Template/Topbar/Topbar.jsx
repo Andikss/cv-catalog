@@ -122,8 +122,8 @@ export const Topbar = () => {
       {/* Fullscreen Mobile Menu with Animation */}
       <Box
         bg="white"
-        width="100vw"
-        height="100vh"
+        width="100dvw"
+        height="100dvh"
         display={{ base: isOpen || !isOpen ? 'flex' : 'none', md: 'none' }}
         flexDirection="column"
         justifyContent="center"
