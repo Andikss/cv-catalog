@@ -33,8 +33,16 @@ export const Topbar = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
-  }, []);
+
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    document.body.style.height = isOpen ? '100vh' : 'auto';
+
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+      document.body.style.overflow = 'auto';
+      document.body.style.height = 'auto';
+    };
+  }, [isOpen]);
 
   // Define the keyframes for the open animation
   const spreadAnimation = keyframes`
@@ -131,12 +139,16 @@ export const Topbar = () => {
         px={8}
       >
         <Flex direction="column" alignItems="start" justifyContent="space-between" gap={6} height="100%" width="100%">
+          <Box position="absolute" top={4} left={4}>
+            <Logo/>
+          </Box>
           <Flex direction="column" gap={6}>
             <Catalog scroll={handleSmoothScroll} />
             <Vacancy scroll={handleSmoothScroll} />
             <Testimonial scroll={handleSmoothScroll} />
             <Company scroll={handleSmoothScroll} />
           </Flex>
+
           <CV />
         </Flex>
       </Box>
