@@ -2,44 +2,12 @@ import { Box, Grid, Image, Spinner, Stack, Text, useDisclosure } from "@chakra-u
 import { CatalogTitle, ImageViewer } from "@/Components";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
-import axios from "axios";
-
-// Retry function
-const fetchWithRetry = async (url, retries = 3, delay = 1000) => {
-  for (let attempt = 0; attempt < retries; attempt++) {
-    try {
-      const response = await axios.get(url);
-      return response.data;
-    } catch (error) {
-      if (attempt < retries - 1) {
-        console.warn(`Attempt ${attempt + 1} failed. Retrying in ${delay}ms...`);
-        await new Promise(resolve => setTimeout(resolve, delay));
-      } else {
-        throw error;
-      }
-    }
-  }
-};
+import jsonData from '@/Assets/data.json';
 
 export const Catalog = () => {
-  const [data, setData] = useState([]);
   const [selectedImages, setSelectedImages] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await fetchWithRetry(import.meta.env.VITE_API_URL);
-        setData(result.data || []);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setData([]);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   useEffect(() => {
     gsap.fromTo(
@@ -47,7 +15,7 @@ export const Catalog = () => {
       { opacity: 0, scale: 0.9 },
       { opacity: 1, scale: 1, duration: 1, stagger: 0.2 }
     );
-  }, [data]);
+  }, []);
 
   const handleImageClick = (images, index) => {
     setSelectedImages(images);
@@ -55,7 +23,8 @@ export const Catalog = () => {
     onOpen();
   };
 
-  if (!data.length) {
+  // Use jsonData.data directly instead of the data state
+  if (!jsonData.data.length) {
     return <Spinner colorScheme="orange" size="md" />;
   }
 
@@ -68,7 +37,7 @@ export const Catalog = () => {
       />
 
       <Stack height="auto" spacing={6} mt="80px" px={{ base: 2, md: '80px' }}>
-        {data.map((packet) => (
+        {jsonData.data.map((packet) => (
           <Box id={`packet-${packet.id}`} key={packet.id} width="100%" display="flex" flexDirection={{ base: "column", md: "row" }} mb={5}>
             <Box width={{ base: '100%', md: '25%' }}>
               <Box position="sticky" top="100px">
